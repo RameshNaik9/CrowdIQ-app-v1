@@ -1,0 +1,97 @@
+.app-container {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url("../Images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+  
+  h2 {
+    font-family: "League Spartan", sans-serif;
+    font-size: 5em;
+    color: #333;
+  }
+  
+  h3 {
+    font-family: "Aleo", serif;
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-top: -60px;
+    margin-bottom: 40px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height: 30%;
+  }
+  
+  .count-panel {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+  }
+  
+  .count {
+    font-size: 3em;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 20px;
+  }
+  
+  footer {
+    margin-top: 40px;
+    font-size: 2em;
+    color: #333;
+    font-family: "League Spartan", sans-serif;
+  }
+  
+  .btn3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px 25px;
+    color: white;
+    background: linear-gradient(145deg, #333, #8a2be2);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -3px -3px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn3:hover {
+    background: linear-gradient(145deg, #333, #6a5acd);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    margin-top: 20px;
+  }
+  
+  .bold-text {
+    font-weight: bold;
+  }
+  
+  
