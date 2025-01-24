@@ -1,0 +1,166 @@
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-01-18T09:59:03.283Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T09:59:03.305Z"}
+{"level":"info","message":"Server running on port 8000","timestamp":"2025-01-18T09:59:10.148Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T09:59:10.155Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T09:59:30.683Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T09:59:30.691Z"}
+{"level":"info","message":"Incoming request: GET /","timestamp":"2025-01-18T10:04:20.841Z"}
+{"level":"error","message":"Error: Not Found - /","timestamp":"2025-01-18T10:04:20.849Z"}
+{"level":"info","message":"Incoming request: GET /","timestamp":"2025-01-18T10:04:33.927Z"}
+{"level":"error","message":"Error: Not Found - /","timestamp":"2025-01-18T10:04:33.928Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T10:06:13.524Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'info')","timestamp":"2025-01-18T10:06:13.528Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T10:08:58.774Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T10:08:58.791Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T10:09:00.709Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Shop Camera 1\",\"location\":\"Entrance\",\"username\":\"admin\",\"password\":\"admin123\",\"ip_address\":\"192.168.1.100\",\"port\":554,\"channel_number\":\"01\",\"stream_type\":\"main\"}","timestamp":"2025-01-18T10:09:00.709Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'info')","timestamp":"2025-01-18T10:09:00.710Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T10:09:48.745Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T10:09:48.752Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T10:09:51.435Z"}
+{"level":"error","message":"Error: Cannot read properties of undefined (reading 'info')","timestamp":"2025-01-18T10:09:51.436Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T10:11:35.555Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T10:11:35.575Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T10:11:40.826Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T10:11:40.833Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T10:11:52.881Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T10:11:52.888Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T10:12:18.553Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Shop Camera 1\",\"location\":\"Entrance\",\"username\":\"admin\",\"password\":\"admin123\",\"ip_address\":\"192.168.1.100\",\"port\":554,\"channel_number\":\"01\",\"stream_type\":\"main\"}","timestamp":"2025-01-18T10:12:18.554Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://admin:admin123@192.168.1.100:554/01/main","timestamp":"2025-01-18T10:12:18.554Z"}
+{"level":"error","message":"Error connecting to RTSP stream: RTSP connection failed","timestamp":"2025-01-18T10:12:18.567Z"}
+{"level":"error","message":"Error in connectCamera: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T10:12:18.568Z"}
+{"level":"error","message":"Error: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T10:12:18.568Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T10:15:00.624Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Public Test Camera\",\"location\":\"Test Location\",\"username\":\"admin\",\"password\":\"admin\",\"ip_address\":\"wowzaec2demo.streamlock.net\",\"port\":554,\"channel_number\":\"vod/mp4:BigBuckBunny_115k.mov\",\"stream_type\":\"\"}","timestamp":"2025-01-18T10:15:00.631Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://admin:admin@wowzaec2demo.streamlock.net:554/vod/mp4:BigBuckBunny_115k.mov/","timestamp":"2025-01-18T10:15:00.631Z"}
+{"level":"error","message":"Error connecting to RTSP stream: RTSP connection failed","timestamp":"2025-01-18T10:15:00.653Z"}
+{"level":"error","message":"Error in connectCamera: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T10:15:00.653Z"}
+{"level":"error","message":"Error: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T10:15:00.653Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T15:36:53.221Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T15:36:53.247Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T15:39:58.152Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera\",\"location\":\"Office\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-18T15:39:58.157Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-18T15:39:58.157Z"}
+{"level":"error","message":"Error connecting to RTSP stream: RTSP connection failed","timestamp":"2025-01-18T15:39:58.383Z"}
+{"level":"error","message":"Error in connectCamera: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T15:39:58.383Z"}
+{"level":"error","message":"Error: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T15:39:58.383Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T15:44:29.930Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T15:44:30.058Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T15:47:11.433Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera\",\"location\":\"Office\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-18T15:47:11.441Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-18T15:47:11.441Z"}
+{"level":"error","message":"FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers\n  built with Apple clang version 16.0.0 (clang-1600.0.26.4)\n  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon\n  libavutil      59. 39.100 / 59. 39.100\n  libavcodec     61. 19.100 / 61. 19.100\n  libavformat    61.  7.100 / 61.  7.100\n  libavdevice    61.  3.100 / 61.  3.100\n  libavfilter    10.  4.100 / 10.  4.100\n  libswscale      8.  3.100 /  8.  3.100\n  libswresample   5.  3.100 /  5.  3.100\n  libpostproc    58.  3.100 / 58.  3.100\n[in#0 @ 0x122e2f510] Error opening input: Server returned 400 Bad Request\nError opening input file rtsp://:@localhost:8554/test/.\nError opening input files: Server returned 400 Bad Request\n","timestamp":"2025-01-18T15:47:11.722Z"}
+{"level":"error","message":"Error connecting to RTSP stream: RTSP connection failed","timestamp":"2025-01-18T15:47:11.722Z"}
+{"level":"error","message":"Error in connectCamera: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T15:47:11.723Z"}
+{"level":"error","message":"Error: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T15:47:11.723Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T15:47:35.630Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera\",\"location\":\"Office\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-18T15:47:35.631Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-18T15:47:35.631Z"}
+{"level":"error","message":"FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers\n  built with Apple clang version 16.0.0 (clang-1600.0.26.4)\n  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon\n  libavutil      59. 39.100 / 59. 39.100\n  libavcodec     61. 19.100 / 61. 19.100\n  libavformat    61.  7.100 / 61.  7.100\n  libavdevice    61.  3.100 / 61.  3.100\n  libavfilter    10.  4.100 / 10.  4.100\n  libswscale      8.  3.100 /  8.  3.100\n  libswresample   5.  3.100 /  5.  3.100\n  libpostproc    58.  3.100 / 58.  3.100\n[in#0 @ 0x135620090] Error opening input: Server returned 400 Bad Request\nError opening input file rtsp://:@localhost:8554/test/.\nError opening input files: Server returned 400 Bad Request\n","timestamp":"2025-01-18T15:47:35.709Z"}
+{"level":"error","message":"Error connecting to RTSP stream: RTSP connection failed","timestamp":"2025-01-18T15:47:35.709Z"}
+{"level":"error","message":"Error in connectCamera: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T15:47:35.709Z"}
+{"level":"error","message":"Error: Failed to connect to the camera. Please check the provided details.","timestamp":"2025-01-18T15:47:35.709Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T15:52:01.016Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T15:52:01.443Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-18T15:52:55.546Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-18T15:52:55.558Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-18T15:53:54.491Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera\",\"location\":\"Office\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-18T15:53:54.497Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-18T15:53:54.497Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-18T15:53:54.497Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678bce9236c01f29729fd244","timestamp":"2025-01-18T15:53:54.620Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T05:50:58.232Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T05:50:58.251Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T05:51:30.526Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera 2\",\"location\":\"Office 2\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-19T05:51:30.530Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-19T05:51:30.530Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-19T05:51:30.531Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-19T05:51:35.387Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678c92e736c01f29729fd245","timestamp":"2025-01-19T05:51:35.449Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T05:58:11.358Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera 2\",\"location\":\"Office 2\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhostdjhfb\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-19T05:58:11.366Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhostdjhfb:8554/test/","timestamp":"2025-01-19T05:58:11.366Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-19T05:58:11.366Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-19T05:58:17.747Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678c92e736c01f29729fd245","timestamp":"2025-01-19T05:58:17.810Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T05:58:38.800Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T05:58:38.815Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T05:58:45.317Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera 2\",\"location\":\"Office 2\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-19T05:58:45.318Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-19T05:58:45.318Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/testsjh","timestamp":"2025-01-19T05:58:45.318Z"}
+{"level":"error","message":"FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers\n  built with Apple clang version 16.0.0 (clang-1600.0.26.4)\n  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon\n  libavutil      59. 39.100 / 59. 39.100\n  libavcodec     61. 19.100 / 61. 19.100\n  libavformat    61.  7.100 / 61.  7.100\n  libavdevice    61.  3.100 / 61.  3.100\n  libavfilter    10.  4.100 / 10.  4.100\n  libswscale      8.  3.100 /  8.  3.100\n  libswresample   5.  3.100 /  5.  3.100\n  libpostproc    58.  3.100 / 58.  3.100\n[rtsp @ 0x14e6164c0] method DESCRIBE failed: 404 Not Found\n[in#0 @ 0x14e616270] Error opening input: Server returned 404 Not Found\nError opening input file rtsp://localhost:8554/testsjh.\nError opening input files: Server returned 404 Not Found\n","timestamp":"2025-01-19T05:58:45.574Z"}
+{"level":"error","message":"Error saving camera to DB: RTSP connection failed","timestamp":"2025-01-19T05:58:45.574Z"}
+{"level":"error","message":"Error in connectCamera: Failed to save the camera. Please check the provided details.","timestamp":"2025-01-19T05:58:45.575Z"}
+{"level":"error","message":"Error: Failed to save the camera. Please check the provided details.","timestamp":"2025-01-19T05:58:45.575Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T05:59:06.203Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T05:59:06.214Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T06:13:56.881Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera 2\",\"location\":\"Office 2\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-19T06:13:56.886Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-19T06:13:56.886Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-19T06:13:56.886Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-19T06:14:01.120Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678c92e736c01f29729fd245","timestamp":"2025-01-19T06:14:01.209Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T14:31:43.178Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T14:31:43.203Z"}
+{"level":"info","message":"Incoming request: OPTIONS /api/camera/connect","timestamp":"2025-01-19T14:37:38.724Z"}
+{"level":"error","message":"Error: Not Found - /api/camera/connect","timestamp":"2025-01-19T14:37:38.727Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T14:38:29.987Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T14:38:29.999Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T14:38:45.042Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T14:40:10.835Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T14:41:16.218Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T14:41:16.225Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T14:41:26.649Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera 3\",\"location\":\"Office 3\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-19T14:41:26.649Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-19T14:41:26.649Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-19T14:41:26.650Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-19T14:41:32.345Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678d0f1c5f3f0f40a3f920f5","timestamp":"2025-01-19T14:41:32.405Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-19T14:41:38.856Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-19T14:41:38.863Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T14:41:41.497Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera 3\",\"location\":\"Office 3\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-19T14:41:41.497Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-19T14:41:41.498Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-19T14:41:41.498Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-19T14:41:47.043Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678d0f1c5f3f0f40a3f920f5","timestamp":"2025-01-19T14:41:47.068Z"}
+{"level":"info","message":"Incoming request: POST /api/camera/connect","timestamp":"2025-01-19T14:41:59.945Z"}
+{"level":"error","message":"Error: Not Found - /api/camera/connect","timestamp":"2025-01-19T14:41:59.950Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-19T14:42:35.932Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"123\",\"location\":\"room\",\"username\":\"ramesh9\",\"password\":\"ramesh\",\"ip_address\":\"localhost\",\"port\":\"554\",\"channel_number\":\"123\",\"stream_type\":\"01\"}","timestamp":"2025-01-19T14:42:35.933Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://ramesh9:ramesh@localhost:554/123/01","timestamp":"2025-01-19T14:42:35.933Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-19T14:42:35.933Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-19T14:42:41.702Z"}
+{"level":"info","message":"Camera connected and saved to DB: 678d0f615f3f0f40a3f920f6","timestamp":"2025-01-19T14:42:41.769Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-24T06:07:23.588Z"}
+{"level":"error","message":"MongoDB Connection Error: connect ECONNREFUSED 127.0.0.1:27017, connect ECONNREFUSED ::1:27017","timestamp":"2025-01-24T06:07:53.608Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-24T06:16:06.016Z"}
+{"level":"error","message":"MongoDB Connection Error: connect ECONNREFUSED 127.0.0.1:27017, connect ECONNREFUSED ::1:27017","timestamp":"2025-01-24T06:16:36.016Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-24T06:20:35.718Z"}
+{"level":"error","message":"MongoDB Connection Error: connect ECONNREFUSED 127.0.0.1:27017, connect ECONNREFUSED ::1:27017","timestamp":"2025-01-24T06:21:05.791Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-24T06:51:37.445Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-24T06:51:37.458Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-24T07:01:28.968Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera new\",\"location\":\"Office new\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-24T07:01:28.974Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost:8554/test/","timestamp":"2025-01-24T07:01:28.974Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-24T07:01:28.974Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-24T07:01:34.898Z"}
+{"level":"info","message":"Camera connected and saved to DB: 67933ace221368b554c5e68a","timestamp":"2025-01-24T07:01:34.987Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-24T07:13:11.858Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-24T07:13:11.870Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-24T07:19:33.980Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-24T07:19:33.994Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-24T07:32:06.353Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Test Camera new\",\"location\":\"Office new\",\"username\":\"\",\"password\":\"\",\"ip_address\":\"localhost1\",\"port\":8554,\"channel_number\":\"test\",\"stream_type\":\"\"}","timestamp":"2025-01-24T07:32:06.358Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://:@localhost1:8554/test/","timestamp":"2025-01-24T07:32:06.358Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-24T07:32:06.358Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-24T07:32:12.104Z"}
+{"level":"info","message":"Camera connected and saved to DB: 67933ace221368b554c5e68a","timestamp":"2025-01-24T07:32:12.146Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-01-24T07:42:45.271Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"LBS AB 502\",\"location\":\"Paina\",\"username\":\"ramesh\",\"password\":\"ramesh123\",\"ip_address\":\"localhost\",\"port\":\"554\",\"channel_number\":\"123\",\"stream_type\":\"01\"}","timestamp":"2025-01-24T07:42:45.272Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://ramesh:ramesh123@localhost:554/123/01","timestamp":"2025-01-24T07:42:45.272Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-24T07:42:45.272Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-24T07:42:51.011Z"}
+{"level":"info","message":"Camera connected and saved to DB: 6793447b221368b554c5ec73","timestamp":"2025-01-24T07:42:51.069Z"}

@@ -1,0 +1,82 @@
+body {
+    font-family: "League Spartan", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url("../Images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .website-name {
+    font-family: "League Spartan", sans-serif;
+    font-size: 10em;
+    margin: 0;
+    color: #333;
+    animation: dance 5s ease-in-out infinite;
+  }
+  
+  @keyframes dance {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .heading {
+    font-family: "Aleo", serif;
+    font-size: 2em;
+    color: #555;
+    margin: 10px 0;
+    animation: dance 5s ease-in-out infinite;
+  }
+  
+  .btn1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.9em;
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px 25px;
+    color: white;
+    background: linear-gradient(145deg, #333, #8a2be2);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -3px -3px 10px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn1:hover {
+    background: linear-gradient(145deg, #333, #6a5acd);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+  }
+  
+  footer {
+    margin-top: 40px;
+    font-size: 1.8em;
+    color: #333;
+    font-family: "League Spartan", sans-serif;
+  }
+  
+  .bold-text {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+  
