@@ -192,3 +192,19 @@
 {"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-01-31T09:40:30.048Z"}
 {"level":"info","message":"FFmpeg output: ","timestamp":"2025-01-31T09:40:35.777Z"}
 {"level":"info","message":"Camera connected and saved to DB: 679c9a93ad44ec545df59b77","timestamp":"2025-01-31T09:40:35.831Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:19:44.001Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:19:44.019Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:22:24.131Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:22:24.146Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:24:30.624Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:24:30.632Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:24:37.365Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:24:37.372Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:25:20.531Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:25:20.539Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:31:16.441Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:31:16.455Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:31:21.285Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:31:21.293Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T11:54:48.841Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T11:54:48.853Z"}

@@ -67,6 +67,12 @@ const cameraSchema = new mongoose.Schema(
                 notes: { type: String },
             },
         ],
+        created_by: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,  // ✅ Added: User ID reference to track camera ownership
+            index: true,  // 🚀 Optimized: Fast retrieval of user's cameras
+        },
     },
     {
         timestamps: true,
@@ -81,5 +87,6 @@ cameraSchema.index({ "connection_history.timestamp": 1 }, { expireAfterSeconds: 
 cameraSchema.index({ name: 1 });
 cameraSchema.index({ ip_address: 1 });
 cameraSchema.index({ status: 1 });
+cameraSchema.index({ created_by: 1 });  // 🚀 Optimized: Fetch cameras by user
 
 module.exports = mongoose.model('Camera', cameraSchema);

@@ -21,3 +21,12 @@ exports.connectCamera = async (req, res, next) => {
         next(error); // Pass error to global error handler
     }
 };
+
+exports.getCamerasForUser = async (req, res) => {
+    try {
+        const cameras = await Camera.find({ created_by: req.user.id });
+        res.status(200).json({ success: true, data: cameras });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
