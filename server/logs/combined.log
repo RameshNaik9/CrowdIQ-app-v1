@@ -230,3 +230,5 @@
 {"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T16:26:58.788Z"}
 {"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T16:28:31.894Z"}
 {"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T16:28:31.902Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T19:36:26.662Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T19:36:26.673Z"}
