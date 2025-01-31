@@ -5,7 +5,7 @@ const cameraSchema = new mongoose.Schema(
         name: {
             type: String,
             required: true,
-            index: true,  // 🚀 Optimized: Index for searching cameras by name
+            // index: true,  // 🚀 Optimized: Index for searching cameras by name
         },
         location: {
             type: String,
@@ -26,7 +26,7 @@ const cameraSchema = new mongoose.Schema(
         ip_address: {
             type: String,
             required: true,
-            index: true,  // 🚀 Optimized: Index for efficient lookup
+            // index: true,  // 🚀 Optimized: Index for efficient lookup
         },
         port: {
             type: Number,
@@ -51,7 +51,7 @@ const cameraSchema = new mongoose.Schema(
             type: String,
             enum: ['online', 'offline'],
             default: 'offline',
-            index: true,  // 🚀 Optimized: Query cameras by status
+            // index: true,  // 🚀 Optimized: Query cameras by status
         },
         last_active: {
             type: Date,
@@ -71,7 +71,7 @@ const cameraSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required: true,  // ✅ Added: User ID reference to track camera ownership
-            index: true,  // 🚀 Optimized: Fast retrieval of user's cameras
+            // index: true,  // 🚀 Optimized: Fast retrieval of user's cameras
         },
     },
     {
