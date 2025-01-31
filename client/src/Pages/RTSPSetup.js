@@ -1,3 +1,5 @@
+// client/src/Pages/RTSPSetup.js
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // For navigation
 import "../Style/RTSPSetup.css";
@@ -60,6 +62,9 @@ const RTSPSetup = () => {
       const data = await response.json();
       console.log("Camera connected successfully:", data);
 
+      // Store camera data in localStorage
+      localStorage.setItem("cameraData", JSON.stringify(data.data));
+
       // Redirect to the streaming page
       navigate(`/stream/${data.data._id}`);
     } catch (err) {
@@ -78,6 +83,7 @@ const RTSPSetup = () => {
       <h2>Enter RTSP Stream Details</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit}>
+        {/* Form Groups */}
         <div className="form-group">
           <label htmlFor="name">Camera Name:</label>
           <input
