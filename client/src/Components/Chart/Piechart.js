@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
-import socket from "../sockets/socket"; // Import your WebSocket setup
+import socket from "../../Sockets/Socket"; // Import your WebSocket setup
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
