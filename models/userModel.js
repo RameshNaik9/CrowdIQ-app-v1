@@ -36,6 +36,20 @@ const userSchema = new mongoose.Schema(
             },
         },
 
+        image: String, // Profile Picture (from Google)
+
+        role: {
+            type: String,
+            enum: ['admin', 'user'],
+            default: 'user',
+        },
+
+        loginMethod: {
+            type: String,
+            enum: ['google', 'email'],
+            required: true, 
+        },
+
         dateJoined: {
             type: Date,
             default: Date.now(),
@@ -56,6 +70,7 @@ const userSchema = new mongoose.Schema(
     }
 );
 
+// Hash password before saving (only if modified)
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) return next();
 
@@ -64,6 +79,8 @@ userSchema.pre('save', async function (next) {
     this.passwordConfirm = undefined;
     next();
 });
+
+// Compare passwords for authentication
 userSchema.methods.correctPassword = async function (
     candidatePassword,
     userPassword
