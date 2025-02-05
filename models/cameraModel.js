@@ -73,7 +73,7 @@ const cameraSchema = new mongoose.Schema(
         },
         created_by: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: 'User', // ✅ User association added
             required: true,
         },
     },
@@ -82,6 +82,15 @@ const cameraSchema = new mongoose.Schema(
         versionKey: false,
     }
 );
+
+// ✅ **Auto-populate `created_by` (User) when querying cameras**
+cameraSchema.pre(/^find/, function (next) {
+    this.populate({
+        path: 'created_by',
+        select: 'name email role', // Fetch only necessary fields
+    });
+    next();
+});
 
 // ✅ **Hash password before saving (Security)**
 cameraSchema.pre('save', async function (next) {
@@ -104,6 +113,6 @@ cameraSchema.index({ "connection_history.timestamp": 1 }, { expireAfterSeconds: 
 cameraSchema.index({ name: 1 });
 cameraSchema.index({ ip_address: 1 });
 cameraSchema.index({ status: 1 });
-cameraSchema.index({ created_by: 1 });
+cameraSchema.index({ created_by: 1 }); // 🚀 Fetch cameras by user
 
 module.exports = mongoose.model('Camera', cameraSchema);
