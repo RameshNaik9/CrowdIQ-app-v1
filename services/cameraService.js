@@ -1,11 +1,12 @@
 const Camera = require('../models/cameraModel');
 
 /**
- * @desc    Fetch all cameras from the database
- * @returns {Promise<Array>} List of all cameras
+ * @desc    Fetch all cameras associated with a specific user
+ * @param   {String} userId - The user's ID
+ * @returns {Promise<Array>} List of cameras belonging to this user
  */
-exports.getAllCameras = async () => {
-    return await Camera.find();
+exports.getAllCamerasByUser = async (userId) => {
+    return await Camera.find({ created_by: userId });
 };
 
 /**

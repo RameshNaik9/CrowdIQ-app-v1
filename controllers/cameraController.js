@@ -3,19 +3,26 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
 /**
- * @desc    Get all cameras
- * @route   GET /api/v1/cameras
+ * @desc    Get all cameras for a specific user
+ * @route   GET /api/v1/cameras?userId=<USER_ID>
  * @access  Public (Will be protected later)
  */
 exports.getAllCameras = catchAsync(async (req, res, next) => {
-    const cameras = await cameraService.getAllCameras();
-    
+    const { userId } = req.query;
+
+    if (!userId) {
+        return next(new AppError('User ID is required', 400));
+    }
+
+    const cameras = await cameraService.getAllCamerasByUser(userId);
+
     res.status(200).json({
         status: 'success',
         results: cameras.length,
         data: cameras,
     });
 });
+
 
 /**
  * @desc    Get a single camera by ID
