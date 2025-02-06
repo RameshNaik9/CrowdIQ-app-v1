@@ -1,6 +1,48 @@
 const cameraService = require('../services/cameraService');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
+const logger = require('../utils/logger');
+
+
+
+/**
+ * @desc    Connect & register a new camera
+ * @route   POST /api/v1/cameras/connect
+ * @access  Public (Will be protected later)
+ */
+exports.connectCamera = async (req, res, next) => {
+    try {
+        const { userId, name, location, username, password, ip_address, port, channel_number, stream_type } = req.body;
+
+        if (!userId) {
+            return next(new AppError('User ID is required', 400));
+        }
+
+        logger.info(`User ${userId} is connecting a new camera: ${name}`);
+
+        // Call service to register and connect camera
+        const result = await connectToCamera({
+            userId,
+            name,
+            location,
+            username,
+            password,
+            ip_address,
+            port,
+            channel_number,
+            stream_type,
+        });
+
+        res.status(201).json({
+            status: 'success',
+            message: 'Camera connected successfully',
+            data: result,
+        });
+    } catch (error) {
+        logger.error(`Error in connectCamera: ${error.message}`);
+        next(error);
+    }
+};
 
 /**
  * @desc    Get all cameras for a specific user

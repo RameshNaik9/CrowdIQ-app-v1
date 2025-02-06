@@ -3,6 +3,9 @@ const cameraController = require('../controllers/cameraController');
 
 const router = express.Router();
 
+// ✅ Connect & Register a New Camera
+router.post('/connect', cameraController.connectCamera);
+
 // ✅ Get all cameras (No authentication for now)
 router.get('/', cameraController.getAllCameras);
 
