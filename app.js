@@ -10,6 +10,7 @@ const dotenv = require('dotenv');
 
 const router = require('./routes/routes');
 const authRouter = require('./routes/authRoutes');
+const cameraRouter = require('./routes/cameraRoutes');
 const AppError = require('./utils/appError');
 const errorController = require('./controllers/errorController');
 
@@ -61,6 +62,7 @@ app.use(compression());
 
 app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/', router); // <- Calling the router
+app.use('/api/v1/cameras', cameraRouter); // ✅ Register Camera Routes
 
 app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
 	next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));

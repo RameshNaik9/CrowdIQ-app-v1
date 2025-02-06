@@ -43,6 +43,7 @@
         "promisify": "0.0.3",
         "util": "^0.12.4",
         "validator": "^13.7.0",
+        "winston": "^3.17.0",
         "xss-clean": "^0.1.1"
     }
 }
