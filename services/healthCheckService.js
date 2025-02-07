@@ -18,10 +18,10 @@ const checkRTSPStream = async (camera) => {
     });
 };
 
-// ✅ Function to perform health check on cameras
-const performHealthCheck = async () => {
+// ✅ Function to perform health check only for a specific user's cameras
+const performHealthCheck = async (userId) => {
     try {
-        const cameras = await Camera.find(); // Fetch all cameras
+        const cameras = await Camera.find({ created_by: userId }); // ✅ Fetch only the user's cameras
 
         for (const camera of cameras) {
             try {

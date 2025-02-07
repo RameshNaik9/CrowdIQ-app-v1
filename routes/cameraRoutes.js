@@ -6,15 +6,22 @@ const { performHealthCheck } = require('../services/healthCheckService');
 const router = express.Router();
 
 
-// ✅ Add API to trigger health check
+// ✅ Add API to trigger health check only for the user's cameras
 router.post('/trigger-health-check', async (req, res) => {
     try {
-        await performHealthCheck();
-        res.status(200).json({ status: "Success", message: "Health check triggered." });
+        const { userId } = req.body;
+        if (!userId) {
+            return res.status(400).json({ status: "Fail", message: "User ID is required." });
+        }
+
+        await performHealthCheck(userId); // ✅ Pass userId to performHealthCheck function
+
+        res.status(200).json({ status: "Success", message: "Health check triggered for user's cameras." });
     } catch (err) {
         res.status(500).json({ status: "Fail", message: "Failed to perform health check." });
     }
 });
+
 
 // ✅ Connect & Register a New Camera
 router.post('/connect', cameraController.connectCamera);
