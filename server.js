@@ -33,7 +33,7 @@ process.on('unCaughtException', (err) => {
 });
 
 // Starting Server ->>
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
 	console.log(`App running at port`, (`${port}`), '...');
 });

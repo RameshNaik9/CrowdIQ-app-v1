@@ -1,8 +1,8 @@
 const cameraService = require('../services/cameraService');
+const { connectToCamera } = require('../services/cameraService');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const logger = require('../utils/logger');
-
 
 
 /**
