@@ -216,3 +216,66 @@ Error opening input files: Connection refused
 2025-02-07T22:21:25.962Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
 2025-02-07T22:21:31.701Z [INFO] FFmpeg output: 
 2025-02-07T22:21:31.766Z [INFO] Camera connected and saved to DB: 67a64ec8ad44ec545df7afdd
+2025-02-07T22:39:05.296Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T22:39:05.402Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:39:05.476Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:39:05.558Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T22:39:05.608Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T22:39:05.667Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:39:05.716Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:39:09.311Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:39:09.318Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T22:39:17.775Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a13ad44ec545df7cac5
+2025-02-07T22:39:17.782Z [INFO] Updating existing camera: 67a67a13ad44ec545df7cac5
+2025-02-07T22:39:33.804Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T22:39:33.872Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:39:33.925Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:39:33.974Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T22:39:34.024Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T22:39:34.071Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:39:34.122Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:39:39.365Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:39:39.370Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T22:39:43.964Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T22:39:44.014Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:39:44.063Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:39:44.110Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T22:39:44.161Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T22:39:44.211Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:39:44.258Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:41:33.074Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:41:33.089Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T22:41:55.212Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a13ad44ec545df7cac5
+2025-02-07T22:41:55.278Z [INFO] Updating existing camera: 67a67a13ad44ec545df7cac5
+2025-02-07T22:46:16.871Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a658dcad44ec545df7b617
+2025-02-07T22:46:16.874Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:46:22.359Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T22:46:22.477Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:46:22.533Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:46:22.587Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T22:46:22.636Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T22:46:22.684Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:46:22.738Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:46:26.994Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:46:26.994Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:46:40.215Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:46:40.229Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:47:15.549Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:47:15.555Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:47:19.489Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:47:19.489Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:50:37.628Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:50:37.630Z [ERROR] Error in connectCamera: exec is not defined
+2025-02-07T22:51:04.611Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T22:51:10.337Z [INFO] FFmpeg output: 
+2025-02-07T22:51:10.403Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T22:51:48.677Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a64ec8ad44ec545df7afdd
+2025-02-07T22:51:54.825Z [INFO] FFmpeg output: 
+2025-02-07T22:51:54.920Z [INFO] Updating existing camera: 67a64ec8ad44ec545df7afdd
+2025-02-07T22:53:32.080Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T22:53:32.179Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:53:32.245Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T22:53:32.313Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T22:53:32.366Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T22:53:32.415Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T22:53:32.463Z [WARN] Camera Offline: nani intlo (localhost)

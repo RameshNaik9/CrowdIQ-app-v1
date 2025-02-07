@@ -70,3 +70,9 @@ Error opening input files: Connection refused
 
 2025-02-07T21:06:43.012Z [ERROR] Error saving camera to DB: RTSP connection failed
 2025-02-07T21:06:43.012Z [ERROR] Error in connectCamera: Failed to save the camera. Please check the provided details.
+2025-02-07T22:46:16.874Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:46:26.994Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:46:40.229Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:47:15.555Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:47:19.489Z [ERROR] Error in connectCamera: cameraService.testRTSPConnection is not a function
+2025-02-07T22:50:37.630Z [ERROR] Error in connectCamera: exec is not defined
