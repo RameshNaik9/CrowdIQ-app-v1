@@ -13,6 +13,7 @@ const authRouter = require('./routes/authRoutes');
 const cameraRouter = require('./routes/cameraRoutes');
 const AppError = require('./utils/appError');
 const errorController = require('./controllers/errorController');
+const { performHealthCheck } = require('./services/healthCheckService');
 
 const app = express();
 
@@ -59,6 +60,12 @@ app.use(mongoSanitize()); // <- Data Sanitization aganist NoSQL query Injection.
 app.use(xss()); // <- Data Sanitization against xss
 
 app.use(compression());
+
+const cron = require('node-cron');
+cron.schedule('*/5 * * * *', async () => {
+    console.log('🔍 Running scheduled camera health check...');
+    await performHealthCheck();
+});
 
 app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/', router); // <- Calling the router
