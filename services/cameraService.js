@@ -76,9 +76,10 @@ const testRTSPConnection = (rtspUrl) => {
  * @param   {String} userId - The user's ID
  * @returns {Promise<Array>} List of cameras belonging to this user
  */
-exports.getAllCamerasByUser = async (userId) => {
-    return await Camera.find({ created_by: userId });
+exports.getAllCameras = async (userId) => {
+    return await Camera.find({ created_by: userId }); // ✅ Fetch only user's cameras
 };
+
 
 /**
  * @desc    Fetch a single camera by ID

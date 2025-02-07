@@ -1,0 +1,139 @@
+2025-02-07T20:55:05.688Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: mg
+2025-02-07T20:55:05.690Z [INFO] Generated RTSP URL: rtsp://mg:mggg@localhost:554/0/1
+2025-02-07T20:55:05.690Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T20:55:05.872Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x129614cf0] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x129614480] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-07T20:55:05.873Z [ERROR] Error saving camera to DB: RTSP connection failed
+2025-02-07T20:55:05.873Z [ERROR] Error in connectCamera: Failed to save the camera. Please check the provided details.
+2025-02-07T20:55:30.230Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: mg
+2025-02-07T20:55:30.235Z [INFO] Generated RTSP URL: rtsp://mg:mggg@localhost:554/0/1
+2025-02-07T20:55:30.235Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T20:55:35.857Z [INFO] FFmpeg output: 
+2025-02-07T20:55:35.944Z [INFO] Camera connected and saved to DB: 67a67347ad44ec545df7c654
+2025-02-07T21:06:33.421Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: sweety peru
+2025-02-07T21:06:33.434Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/112/02
+2025-02-07T21:06:33.434Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:06:33.646Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x15b7078b0] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x15b707100] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-07T21:06:33.647Z [ERROR] Error saving camera to DB: RTSP connection failed
+2025-02-07T21:06:33.647Z [ERROR] Error in connectCamera: Failed to save the camera. Please check the provided details.
+2025-02-07T21:06:37.591Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: Ramesh
+2025-02-07T21:06:37.591Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/1234/2
+2025-02-07T21:06:37.591Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:06:37.739Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x1220043b0] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x120f059b0] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-07T21:06:37.739Z [ERROR] Error saving camera to DB: RTSP connection failed
+2025-02-07T21:06:37.739Z [ERROR] Error in connectCamera: Failed to save the camera. Please check the provided details.
+2025-02-07T21:06:42.824Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: sweety peru
+2025-02-07T21:06:42.824Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/112/02
+2025-02-07T21:06:42.824Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:06:43.012Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x126f2e3c0] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x126e06ac0] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-07T21:06:43.012Z [ERROR] Error saving camera to DB: RTSP connection failed
+2025-02-07T21:06:43.012Z [ERROR] Error in connectCamera: Failed to save the camera. Please check the provided details.
+2025-02-07T21:07:03.690Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: sweety peru
+2025-02-07T21:07:03.691Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/112/02
+2025-02-07T21:07:03.691Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:07:09.354Z [INFO] FFmpeg output: 
+2025-02-07T21:07:09.415Z [INFO] Camera connected and saved to DB: 67a64ec8ad44ec545df7afdd
+2025-02-07T21:15:07.598Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: Ramesh2
+2025-02-07T21:15:07.600Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/1/1
+2025-02-07T21:15:07.600Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:15:13.348Z [INFO] FFmpeg output: 
+2025-02-07T21:15:13.382Z [INFO] Camera connected and saved to DB: 67a658dcad44ec545df7b617
+2025-02-07T21:18:31.688Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: sweety peru
+2025-02-07T21:18:31.689Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/112/02
+2025-02-07T21:18:31.691Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:18:37.445Z [INFO] FFmpeg output: 
+2025-02-07T21:18:37.481Z [INFO] Camera connected and saved to DB: 67a64ec8ad44ec545df7afdd
+2025-02-07T21:19:15.270Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: sweety peru
+2025-02-07T21:19:15.271Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/112/02
+2025-02-07T21:19:15.272Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:19:21.048Z [INFO] FFmpeg output: 
+2025-02-07T21:19:21.064Z [INFO] Camera connected and saved to DB: 67a64ec8ad44ec545df7afdd
+2025-02-07T21:19:34.806Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: Ramesh
+2025-02-07T21:19:34.807Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/1234/2
+2025-02-07T21:19:34.807Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:19:40.546Z [INFO] FFmpeg output: 
+2025-02-07T21:19:40.561Z [INFO] Camera connected and saved to DB: 67a650f8ad44ec545df7b134
+2025-02-07T21:20:12.029Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: sweety peru
+2025-02-07T21:20:12.030Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/112/02
+2025-02-07T21:20:12.030Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:20:17.794Z [INFO] FFmpeg output: 
+2025-02-07T21:20:17.806Z [INFO] Camera connected and saved to DB: 67a64ec8ad44ec545df7afdd
+2025-02-07T21:21:34.943Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: mg
+2025-02-07T21:21:34.948Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/0/1
+2025-02-07T21:21:34.948Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:21:40.707Z [INFO] FFmpeg output: 
+2025-02-07T21:21:40.803Z [INFO] Camera connected and saved to DB: 67a67347ad44ec545df7c654
+2025-02-07T21:24:30.047Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: nani intlo
+2025-02-07T21:24:30.047Z [INFO] Generated RTSP URL: rtsp://Nani:nani@localhost:554/2/1
+2025-02-07T21:24:30.047Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:24:35.778Z [INFO] FFmpeg output: 
+2025-02-07T21:24:35.913Z [INFO] Camera connected and saved to DB: 67a67a13ad44ec545df7cac5
+2025-02-07T21:26:03.514Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: nani intlo
+2025-02-07T21:26:03.515Z [INFO] Generated RTSP URL: rtsp://Nani:nani@localhost:554/1/1
+2025-02-07T21:26:03.515Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:26:09.251Z [INFO] FFmpeg output: 
+2025-02-07T21:26:09.363Z [INFO] Camera connected and saved to DB: 67a67a71ad44ec545df7cb02
+2025-02-07T21:26:35.330Z [INFO] User 67a21542aa6ea68be40a23ab is connecting a new camera: nani intlo
+2025-02-07T21:26:35.334Z [INFO] Generated RTSP URL: rtsp://undefined:undefined@localhost:554/2/1
+2025-02-07T21:26:35.334Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-07T21:26:41.549Z [INFO] FFmpeg output: 
+2025-02-07T21:26:41.587Z [INFO] Camera connected and saved to DB: 67a67a13ad44ec545df7cac5

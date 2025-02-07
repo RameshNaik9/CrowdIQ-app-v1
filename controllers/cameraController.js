@@ -50,16 +50,16 @@ exports.connectCamera = async (req, res, next) => {
  * @access  Public (Will be protected later)
  */
 exports.getAllCameras = catchAsync(async (req, res, next) => {
-    const { userId } = req.query;
+    const userId = req.headers["user-id"]; // ✅ Read userId from headers
 
     if (!userId) {
-        return next(new AppError('User ID is required', 400));
+        return next(new AppError("User ID is required", 400));
     }
 
-    const cameras = await cameraService.getAllCamerasByUser(userId);
+    const cameras = await cameraService.getAllCameras(userId);
 
     res.status(200).json({
-        status: 'success',
+        status: "success",
         results: cameras.length,
         data: cameras,
     });
