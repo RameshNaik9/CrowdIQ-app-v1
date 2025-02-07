@@ -25,10 +25,10 @@ const performHealthCheck = async (userId) => {
   try {
     const fortyEightHoursAgo = new Date(Date.now() - 48 * 60 * 60 * 1000);
 
-    // Fetch only the user's cameras that haven't been active in the last 48 hours
+    // Fetch only the user's cameras that have been active in the last 48 hours
     const cameras = await Camera.find({
-      created_by: userId,
-      last_active: { $lt: fortyEightHoursAgo }
+    created_by: userId,
+    last_active: { $gt: fortyEightHoursAgo }
     });
 
     // Run the health checks in parallel
