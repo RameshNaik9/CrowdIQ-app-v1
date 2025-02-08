@@ -360,3 +360,410 @@ Error opening input files: Server returned 404 Not Found
 2025-02-07T23:21:10.165Z [INFO] Camera Online: Ramesh2 (localhost)
 2025-02-07T23:21:10.166Z [INFO] Camera Online: Ramesh (localhost)
 2025-02-07T23:21:10.170Z [INFO] Camera Online: mg (localhost)
+2025-02-07T23:33:35.469Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-07T23:33:35.487Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-07T23:33:35.488Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-07T23:33:35.490Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-07T23:33:35.491Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-07T23:33:35.493Z [INFO] Camera Online: mg (localhost)
+2025-02-07T23:33:35.493Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-07T23:33:57.845Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:34:03.486Z [INFO] FFmpeg output: 
+2025-02-07T23:34:03.500Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T23:34:14.980Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:34:15.081Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x149e2e9a0] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x149f06760] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:34:15.081Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:34:22.715Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T23:34:22.717Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T23:34:22.719Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T23:34:22.720Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T23:34:22.720Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T23:34:22.723Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T23:34:22.723Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T23:38:22.427Z [WARN] Camera Offline: mg (localhost)
+2025-02-07T23:38:22.429Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T23:38:22.429Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T23:38:22.430Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-07T23:38:22.430Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-07T23:38:22.430Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-07T23:38:22.431Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-07T23:43:33.004Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:43:33.214Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x12ee06590] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x12ee062e0] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:43:33.215Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:43:36.437Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:43:36.521Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x11df06740] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x11df064f0] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:43:36.522Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:43:52.055Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:43:52.224Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x12d820c00] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x12d820a40] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:43:52.224Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:43:54.736Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:43:54.811Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x129630460] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x129630210] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:43:54.812Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:43:55.899Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:43:55.969Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x127905c00] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x1279059b0] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:43:55.969Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:44:02.333Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:44:02.434Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x12701fde0] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x126615240] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:44:02.434Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:44:32.670Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-07T23:44:32.678Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-07T23:44:32.681Z [INFO] Camera Online: mg (localhost)
+2025-02-07T23:44:32.682Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-07T23:44:32.682Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-07T23:44:32.683Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-07T23:44:32.683Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-07T23:44:36.986Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:44:42.606Z [INFO] FFmpeg output: 
+2025-02-07T23:44:42.619Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T23:44:59.293Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:44:59.402Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x143621610] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x143621420] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:44:59.403Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:47:36.341Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:47:36.556Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x13d615d30] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x13d615bf0] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:47:36.556Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:47:42.459Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:47:42.558Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[rtsp @ 0x1346204d0] method DESCRIBE failed: 404 Not Found
+[in#0 @ 0x134620230] Error opening input: Server returned 404 Not Found
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Server returned 404 Not Found
+
+2025-02-07T23:47:42.559Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-07T23:47:56.880Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-07T23:48:02.475Z [INFO] FFmpeg output: 
+2025-02-07T23:48:02.489Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-07T23:49:17.891Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a64ec8ad44ec545df7afdd
+2025-02-07T23:49:23.576Z [INFO] FFmpeg output: 
+2025-02-07T23:49:23.585Z [INFO] Updating existing camera: 67a64ec8ad44ec545df7afdd
+2025-02-07T23:49:52.197Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67347ad44ec545df7c654
+2025-02-07T23:49:57.771Z [INFO] FFmpeg output: 
+2025-02-07T23:49:57.783Z [INFO] Updating existing camera: 67a67347ad44ec545df7c654
+2025-02-07T23:55:52.432Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-07T23:55:52.444Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-07T23:55:52.446Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-07T23:55:52.447Z [INFO] Camera Online: mg (localhost)
+2025-02-07T23:55:52.448Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-07T23:55:52.448Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-07T23:55:52.449Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:00:07.275Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-08T00:00:13.030Z [INFO] FFmpeg output: 
+2025-02-08T00:00:13.045Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T00:08:41.403Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a658dcad44ec545df7b617
+2025-02-08T00:08:47.278Z [INFO] FFmpeg output: 
+2025-02-08T00:08:47.357Z [INFO] Updating existing camera: 67a658dcad44ec545df7b617
+2025-02-08T00:09:03.649Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a13ad44ec545df7cac5
+2025-02-08T00:09:09.670Z [INFO] FFmpeg output: 
+2025-02-08T00:09:09.681Z [INFO] Updating existing camera: 67a67a13ad44ec545df7cac5
+2025-02-08T00:12:53.756Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-08T00:12:59.478Z [INFO] FFmpeg output: 
+2025-02-08T00:12:59.557Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T00:17:04.284Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a13ad44ec545df7cac5
+2025-02-08T00:17:09.974Z [INFO] FFmpeg output: 
+2025-02-08T00:17:10.017Z [INFO] Updating existing camera: 67a67a13ad44ec545df7cac5
+2025-02-08T00:45:28.392Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T00:45:28.412Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:45:28.424Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:45:28.425Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:45:28.428Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T00:45:28.429Z [INFO] Camera Online: mg (localhost)
+2025-02-08T00:45:28.429Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:46:19.571Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:46:19.579Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T00:46:19.579Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T00:46:19.579Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:46:19.580Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:46:19.580Z [INFO] Camera Online: mg (localhost)
+2025-02-08T00:46:19.580Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:50:50.906Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:50:50.914Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T00:50:50.918Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:50:50.920Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:50:50.921Z [INFO] Camera Online: mg (localhost)
+2025-02-08T00:50:50.922Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:50:50.923Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T00:53:38.433Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:53:38.440Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T00:53:38.467Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:53:38.469Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:53:38.470Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:53:38.472Z [INFO] Camera Online: mg (localhost)
+2025-02-08T00:53:38.476Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T00:55:57.751Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-08T00:56:03.433Z [INFO] FFmpeg output: 
+2025-02-08T00:56:03.444Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T00:56:16.287Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a6526ead44ec545df7b21c
+2025-02-08T00:56:22.021Z [INFO] FFmpeg output: 
+2025-02-08T00:56:22.026Z [INFO] Updating existing camera: 67a6526ead44ec545df7b21c
+2025-02-08T00:57:01.898Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:57:01.904Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:57:01.905Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T00:57:01.905Z [INFO] Camera Online: mg (localhost)
+2025-02-08T00:57:01.909Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:57:01.910Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:57:01.912Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T00:57:40.132Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T00:57:40.142Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T00:57:40.143Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:57:40.144Z [INFO] Camera Online: mg (localhost)
+2025-02-08T00:57:40.144Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T00:57:40.145Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T00:57:40.145Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:01:00.748Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-08T01:01:06.488Z [INFO] FFmpeg output: 
+2025-02-08T01:01:06.522Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T01:01:31.630Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:01:31.719Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:01:31.722Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:01:31.731Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:01:31.732Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:01:31.768Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:01:31.770Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:02:56.836Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:02:56.845Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:02:56.846Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:02:56.870Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:02:56.872Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:02:56.877Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:02:56.880Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:03:30.381Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:03:30.389Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:03:30.420Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:03:30.421Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:03:30.428Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:03:30.436Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:03:30.468Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:04:59.984Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:04:59.994Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:04:59.998Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:05:00.023Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:05:00.024Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:05:00.025Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:05:00.025Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:05:56.234Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:05:56.241Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:05:56.243Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:05:56.252Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:05:56.269Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:05:56.270Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:05:56.270Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:09:44.494Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:09:44.520Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:09:44.527Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:09:44.591Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:09:44.596Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:09:44.621Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:09:44.622Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:09:59.132Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a650f8ad44ec545df7b134
+2025-02-08T01:10:04.776Z [INFO] FFmpeg output: 
+2025-02-08T01:10:04.787Z [INFO] Updating existing camera: 67a650f8ad44ec545df7b134
+2025-02-08T01:11:51.236Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:11:51.243Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:11:51.244Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:11:51.247Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:11:51.248Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:11:51.248Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:11:51.249Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:17.454Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:12:17.458Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:12:17.458Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:17.458Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:12:17.459Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:12:17.459Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:12:17.459Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:38.226Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:12:38.232Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:38.250Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:12:38.270Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:38.270Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:12:38.271Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:12:38.274Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:12:52.728Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:52.734Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:12:52.734Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:12:52.735Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:12:52.735Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:12:52.735Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:12:52.736Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:13:06.487Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:13:06.492Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:13:06.493Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:13:06.495Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:13:06.506Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:13:06.519Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:13:06.520Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:13:24.683Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:13:24.692Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:13:24.693Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:13:24.695Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:13:24.695Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:13:24.699Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:13:24.700Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:14:58.462Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:14:58.476Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:14:58.478Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:14:58.480Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:14:58.481Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:14:58.491Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:14:58.496Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:15:19.495Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-08T01:15:25.080Z [INFO] FFmpeg output: 
+2025-02-08T01:15:25.090Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T01:15:36.236Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: 67a67a71ad44ec545df7cb02
+2025-02-08T01:15:41.883Z [INFO] FFmpeg output: 
+2025-02-08T01:15:41.901Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T01:21:09.936Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera...
+2025-02-08T01:21:09.937Z [INFO] No existing camera found, creating a new one...
+2025-02-08T01:21:09.938Z [ERROR] Error in connectCamera: cameraService.createCamera is not a function
+2025-02-08T01:21:58.583Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to camera ID: undefined
+2025-02-08T01:22:04.392Z [INFO] FFmpeg output: 
+2025-02-08T01:25:59.593Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-08T01:26:05.344Z [INFO] FFmpeg output: 
+2025-02-08T01:26:05.346Z [INFO] Generated RTSP URL: rtsp://Nani:nani@localhost:554/3/2
+2025-02-08T01:26:05.346Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-08T01:26:10.981Z [INFO] FFmpeg output: 
+2025-02-08T01:26:11.056Z [INFO] Camera connected and saved to DB: 67a6b2b3ad44ec545df7f440
