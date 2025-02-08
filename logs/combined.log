@@ -767,3 +767,86 @@ Error opening input files: Server returned 404 Not Found
 2025-02-08T01:26:05.346Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
 2025-02-08T01:26:10.981Z [INFO] FFmpeg output: 
 2025-02-08T01:26:11.056Z [INFO] Camera connected and saved to DB: 67a6b2b3ad44ec545df7f440
+2025-02-08T01:27:58.332Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:27:58.347Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:27:58.349Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:27:58.351Z [INFO] Camera Online: Ramesh Naik Lahori (localhost)
+2025-02-08T01:27:58.352Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:27:58.353Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:27:58.354Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:27:58.355Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:29:10.995Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-08T01:29:16.688Z [INFO] FFmpeg output: 
+2025-02-08T01:29:16.698Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
+2025-02-08T01:33:13.896Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:33:13.909Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:33:13.910Z [INFO] Camera Online: Ramesh Naik Lahori (localhost)
+2025-02-08T01:33:13.911Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:33:13.912Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:33:13.914Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:33:13.915Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:33:13.916Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:40:43.892Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:40:43.908Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:40:43.911Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:40:43.912Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:40:43.913Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:40:43.915Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:40:43.915Z [INFO] Camera Online: Ramesh Naik Lahori (localhost)
+2025-02-08T01:40:43.916Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:40:48.464Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-08T01:40:54.080Z [INFO] FFmpeg output: 
+2025-02-08T01:40:54.089Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
+2025-02-08T01:44:11.733Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-08T01:44:17.486Z [INFO] FFmpeg output: 
+2025-02-08T01:44:17.543Z [INFO] Updating existing camera: 67a67a71ad44ec545df7cb02
+2025-02-08T01:49:38.843Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:49:38.852Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:49:38.853Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:49:38.854Z [INFO] Camera Online: Ramesh Naik Lahori (localhost)
+2025-02-08T01:49:38.855Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:49:38.859Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:49:38.861Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:49:38.861Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:50:46.694Z [INFO] Camera Online: sweety peru (localhost)
+2025-02-08T01:50:46.700Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:50:46.701Z [INFO] Camera Online: mg (localhost)
+2025-02-08T01:50:46.702Z [INFO] Camera Online: Ramesh Naik Lahori (localhost)
+2025-02-08T01:50:46.705Z [INFO] Camera Online: Ramesh (localhost)
+2025-02-08T01:50:46.706Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:50:46.706Z [INFO] Camera Online: nani intlo (localhost)
+2025-02-08T01:50:46.708Z [INFO] Camera Online: Ramesh2 (localhost)
+2025-02-08T01:51:14.758Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-08T01:51:14.759Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-08T01:51:14.760Z [WARN] Camera Offline: mg (localhost)
+2025-02-08T01:51:14.760Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-08T01:51:14.761Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-08T01:51:14.761Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-08T01:51:14.761Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-08T01:51:14.762Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-08T07:12:47.532Z [WARN] Camera Offline: mg (localhost)
+2025-02-08T07:12:47.543Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-08T07:12:47.544Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-08T07:12:47.544Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-08T07:12:47.545Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-08T07:12:47.545Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-08T07:12:47.545Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-08T07:12:47.545Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-08T07:12:56.383Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-08T07:12:56.524Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x141716150] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x141715900] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-08T07:12:56.525Z [ERROR] Error in connectCamera: RTSP connection failed

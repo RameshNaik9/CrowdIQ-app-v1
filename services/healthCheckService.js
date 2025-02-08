@@ -39,7 +39,6 @@ const performHealthCheck = async (userId) => {
         // ✅ Update camera status to online
         await Camera.findByIdAndUpdate(camera._id, {
           status: 'online',
-          last_active: new Date(),
           $push: { connection_history: { status: 'success', reason: 'Health Check Passed' } },
         });
       } catch (error) {
