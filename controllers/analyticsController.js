@@ -88,6 +88,7 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
         avgVisitorsPerDay: 0,
         avgVisitorsChange: 0,
         peakHour: "N/A",
+        peakHourVisitors: 0,
         peakHourChange: 0,
         dwellTime: "0m",
         dwellTimeChange: 0,
@@ -119,7 +120,7 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
     ? ((avgVisitorsPerDay - prevAvgVisitorsPerDay) / prevAvgVisitorsPerDay) * 100
     : 0;
 
-  // ✅ Find Peak Hour
+  // ✅ Find Peak Hour & Average Visitors in that Hour
   const hourMap = {};
   analytics.forEach((entry) => {
     entry.visitorTrend.forEach(({ time, count }) => {
@@ -128,8 +129,9 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
   });
 
   const peakHour = Object.keys(hourMap).reduce((a, b) => (hourMap[a] > hourMap[b] ? a : b), "N/A");
+  const peakHourVisitors = peakHour !== "N/A" ? Math.round(hourMap[peakHour] / numDays) : 0;
 
-  // ✅ Find previous peak hour
+  // ✅ Find previous period peak hour & its avg visitors
   const prevHourMap = {};
   prevAnalytics.forEach((entry) => {
     entry.visitorTrend.forEach(({ time, count }) => {
@@ -137,12 +139,12 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
     });
   });
 
-  const prevPeakHour = Object.keys(prevHourMap).reduce(
-    (a, b) => (prevHourMap[a] > prevHourMap[b] ? a : b),
-    "N/A"
-  );
+  const prevPeakHour = Object.keys(prevHourMap).reduce((a, b) => (prevHourMap[a] > prevHourMap[b] ? a : b), "N/A");
+  const prevPeakHourVisitors = prevPeakHour !== "N/A" ? Math.round(prevHourMap[prevPeakHour] / numDays) : 0;
 
-  const peakHourChange = prevPeakHour && prevPeakHour !== peakHour ? 100 : 0;
+  const peakHourChange = prevPeakHourVisitors
+    ? ((peakHourVisitors - prevPeakHourVisitors) / prevPeakHourVisitors) * 100
+    : 0;
 
   // ✅ Calculate Average Dwell Time
   const totalDwellTimes = analytics.map((entry) =>
@@ -196,6 +198,7 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
       avgVisitorsPerDay,
       avgVisitorsChange,
       peakHour,
+      peakHourVisitors,
       peakHourChange,
       dwellTime: `${Math.floor(avgDwellTime / 60)}m ${avgDwellTime % 60}s`,
       dwellTimeChange,
