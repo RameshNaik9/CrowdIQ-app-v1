@@ -207,3 +207,91 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+
+// ✅ Function to fetch hourly visitor trends
+exports.getVisitorTrends = catchAsync(async (req, res, next) => {
+  const { userId, cameraId, startDate, endDate } = req.query;
+
+  if (!userId || !cameraId || !startDate || !endDate) {
+    return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+  }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const numDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) || 1;
+
+  // ✅ Fetch current period analytics
+  const currentAnalytics = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: start, $lte: end },
+  });
+
+  // ✅ Compute total visitors per hour for current period
+  let currentHourMap = {};
+  currentAnalytics.forEach((entry) => {
+    entry.visitorTrend.forEach(({ time, count }) => {
+      currentHourMap[time] = (currentHourMap[time] || 0) + count;
+    });
+  });
+
+  // ✅ Convert to average per hour
+  Object.keys(currentHourMap).forEach((hour) => {
+    currentHourMap[hour] = Math.round(currentHourMap[hour] / numDays);
+  });
+
+  // ✅ Fetch previous period analytics (same duration before start date)
+  const prevStart = new Date(start);
+  prevStart.setDate(prevStart.getDate() - numDays);
+  const prevEnd = new Date(end);
+  prevEnd.setDate(prevEnd.getDate() - numDays);
+
+  const prevAnalytics = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: prevStart, $lte: prevEnd },
+  });
+
+  // ✅ Compute total visitors per hour for previous period
+  let prevHourMap = {};
+  prevAnalytics.forEach((entry) => {
+    entry.visitorTrend.forEach(({ time, count }) => {
+      prevHourMap[time] = (prevHourMap[time] || 0) + count;
+    });
+  });
+
+  // ✅ Convert to average per hour
+  Object.keys(prevHourMap).forEach((hour) => {
+    prevHourMap[hour] = Math.round(prevHourMap[hour] / numDays);
+  });
+
+  // ✅ Prepare final response with % change
+  let visitorTrends = [];
+  const allHours = new Set([...Object.keys(currentHourMap), ...Object.keys(prevHourMap)]);
+
+  allHours.forEach((hour) => {
+    const currentVisitors = currentHourMap[hour] || 0;
+    const previousVisitors = prevHourMap[hour] || 0;
+    const change = previousVisitors
+      ? ((currentVisitors - previousVisitors) / previousVisitors) * 100
+      : 0;
+
+    visitorTrends.push({
+      hour,
+      visitors: currentVisitors,
+      change: parseFloat(change.toFixed(2)),
+    });
+  });
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      currentPeriod: visitorTrends,
+      previousPeriod: Object.keys(prevHourMap).map((hour) => ({
+        hour,
+        visitors: prevHourMap[hour],
+      })),
+    },
+  });
+});
