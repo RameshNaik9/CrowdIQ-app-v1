@@ -295,3 +295,58 @@ exports.getVisitorTrends = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+// ✅ Fetch Average Visitors Per Day by Gender
+exports.getAvgVisitorsByGender = catchAsync(async (req, res, next) => {
+  const { userId, cameraId, startDate, endDate } = req.query;
+
+  if (!userId || !cameraId || !startDate || !endDate) {
+    return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+  }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const numDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) || 1; // Ensure at least 1 day
+
+  // ✅ Fetch gender distribution data from DB
+  const analytics = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: start, $lte: end },
+  });
+
+  if (!analytics.length) {
+    return res.status(200).json({
+      status: "success",
+      data: {
+        avgMalePerDay: 0,
+        avgFemalePerDay: 0,
+        avgOtherPerDay: 0,
+      },
+    });
+  }
+
+  // ✅ Calculate total gender-wise counts
+  let totalMale = 0;
+  let totalFemale = 0;
+  let totalOther = 0; // If you later add other genders
+
+  analytics.forEach((entry) => {
+    totalMale += entry.maleVisitors;
+    totalFemale += entry.femaleVisitors;
+  });
+
+  // ✅ Compute the averages per day
+  const avgMalePerDay = Math.round(totalMale / numDays);
+  const avgFemalePerDay = Math.round(totalFemale / numDays);
+
+  // ✅ Send the Response
+  res.status(200).json({
+    status: "success",
+    data: {
+      avgMalePerDay,
+      avgFemalePerDay,
+      avgOtherPerDay: 0, // Keeping structure for future extension
+    },
+  });
+});
