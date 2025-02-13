@@ -920,3 +920,73 @@ Error opening input file rtsp://localhost:8554/test.
 Error opening input files: Connection refused
 
 2025-02-08T10:48:32.478Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-08T20:34:54.967Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-08T20:34:54.971Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-08T20:34:54.973Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-08T20:34:54.975Z [WARN] Camera Offline: mg (localhost)
+2025-02-08T20:34:54.976Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-08T20:34:54.977Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-08T20:34:54.977Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-08T20:34:54.978Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-08T20:36:51.154Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-08T20:36:51.329Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x12a706660] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x12b804300] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-08T20:36:51.329Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-09T20:54:35.286Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-09T20:54:36.667Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x151e24520] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x151e23ff0] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-09T20:54:36.668Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-09T20:54:41.715Z [WARN] Camera Offline: sweety peru (localhost)
+2025-02-09T20:54:41.735Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-09T20:54:41.738Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-09T20:54:41.740Z [WARN] Camera Offline: nani intlo (localhost)
+2025-02-09T20:54:41.741Z [WARN] Camera Offline: mg (localhost)
+2025-02-09T20:54:41.743Z [WARN] Camera Offline: Ramesh2 (localhost)
+2025-02-09T20:54:41.745Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-09T20:54:41.750Z [WARN] Camera Offline: Ramesh (localhost)
+2025-02-13T15:54:23.757Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-13T15:54:25.547Z [ERROR] FFmpeg error: ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.4)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.100 / 61. 19.100
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[tcp @ 0x14862c3b0] Connection to tcp://localhost:8554?timeout=0 failed: Connection refused
+[in#0 @ 0x148709140] Error opening input: Connection refused
+Error opening input file rtsp://localhost:8554/test.
+Error opening input files: Connection refused
+
+2025-02-13T15:54:25.548Z [ERROR] Error in connectCamera: RTSP connection failed

@@ -27,6 +27,14 @@ const VisitorAnalyticsSchema = new mongoose.Schema(
     genderDistribution: [{ name: String, value: Number }], // Male, Female
     ageDistribution: [{ name: String, count: Number }], // Age groups
     dwellTimeDistribution: [{ time: String, count: Number }], // Dwell times
+    entryExitFlow: [{ entryTime: String, exitTime: String, count: Number }], // ✅ Entry/Exit flow
+    visitorSegmentation: [{ category: String, count: Number }], // ✅ Visitor types
+    aiInsights: [
+      {
+        type: { type: String, required: true },
+        description: { type: String, required: true },
+      },
+    ], // ✅ Correctly defining `aiInsights` as an array of objects
   },
   { timestamps: true }
 );
