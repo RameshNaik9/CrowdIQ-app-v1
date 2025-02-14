@@ -15,7 +15,7 @@ const RawDataLogSchema = new mongoose.Schema(
     date: {
       type: Date,
       required: true,
-      default: Date.now,
+    //   default: Date.now,
       index: true, // ✅ Faster queries for daily logs
     },
     logs: [

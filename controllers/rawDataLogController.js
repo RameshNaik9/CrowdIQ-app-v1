@@ -2,20 +2,21 @@ const RawDataLog = require("../models/RawDataLog");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
-// ✅ 1. Insert Dummy Data
+// ✅ 1. Insert Raw Logs (With Date Support)
 exports.insertRawLogs = catchAsync(async (req, res, next) => {
-  const { userId, cameraId, logs } = req.body;
+  const { userId, cameraId, logs, date } = req.body;
 
   if (!userId || !cameraId || !logs || !Array.isArray(logs)) {
     return next(new AppError("Missing required fields", 400));
   }
 
-  const today = new Date().setHours(0, 0, 0, 0);
+  // ✅ If no date is provided, use today
+  const logDate = date ? new Date(date).setHours(0, 0, 0, 0) : new Date().setHours(0, 0, 0, 0);
 
-  let rawLogEntry = await RawDataLog.findOne({ userId, cameraId, date: today });
+  let rawLogEntry = await RawDataLog.findOne({ userId, cameraId, date: logDate });
 
   if (!rawLogEntry) {
-    rawLogEntry = new RawDataLog({ userId, cameraId, date: today, logs });
+    rawLogEntry = new RawDataLog({ userId, cameraId, date: logDate, logs });
   } else {
     rawLogEntry.logs.push(...logs);
   }
