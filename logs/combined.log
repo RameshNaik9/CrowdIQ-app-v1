@@ -1002,3 +1002,17 @@ Error opening input files: Connection refused
 2025-02-13T23:27:58.664Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
 2025-02-14T00:48:11.952Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
 2025-02-14T00:48:11.962Z [WARN] Camera Offline: Hakim Camera (localhost)
+2025-02-14T00:55:43.964Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-14T00:55:49.614Z [INFO] FFmpeg output: 
+2025-02-14T00:55:49.657Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
+2025-02-14T01:10:02.871Z [INFO] Camera Online: Ramesh Naik Lahori (localhost)
+2025-02-14T01:10:02.888Z [INFO] Camera Online: Hakim Camera (localhost)
+2025-02-14T01:20:21.033Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-14T01:20:21.043Z [WARN] Camera Offline: Hakim Camera (localhost)
+2025-02-14T01:20:31.401Z [WARN] Camera Offline: Hakim Camera (localhost)
+2025-02-14T01:20:31.403Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-14T01:27:17.978Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-14T01:27:24.013Z [INFO] FFmpeg output: 
+2025-02-14T01:27:24.037Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
+2025-02-14T01:28:24.945Z [WARN] Camera Offline: Hakim Camera (localhost)
+2025-02-14T01:28:24.947Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
