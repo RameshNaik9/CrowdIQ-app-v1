@@ -13,7 +13,7 @@ const authRouter = require('./routes/authRoutes');
 const cameraRouter = require('./routes/cameraRoutes');
 const overviewRoutes = require("./routes/overviewRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
-const rawLogsRouter = require("./routes/rawLogsRouter");
+const rawDataLogRoutes = require("./routes/rawDataLogRoutes");
 const AppError = require('./utils/appError');
 const errorController = require('./controllers/errorController');
 
@@ -69,7 +69,7 @@ app.use('/api/v1/', router); // <- Calling the router
 app.use('/api/v1/cameras', cameraRouter); // ✅ Register Camera Routes
 app.use("/api/v1/overview", overviewRoutes); // ✅ Add the new API
 app.use("/api/v1/analytics", analyticsRoutes);
-app.use("/api/v1/rawlogs", rawLogsRouter); // ✅ Register Raw Logs API
+app.use("/api/v1/rawlogs", rawDataLogRoutes);
 
 
 app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
