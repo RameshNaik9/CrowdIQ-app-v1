@@ -516,3 +516,57 @@ exports.getDwellTimeTrends = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+
+// ✅ API to Fetch New vs. Returning Visitors
+exports.getVisitorSegmentation = catchAsync(async (req, res, next) => {
+  const { userId, cameraId, startDate, endDate } = req.query;
+
+  if (!userId || !cameraId || !startDate || !endDate) {
+    return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+  }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const numDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) || 1; // Ensure at least 1 day
+
+  // ✅ Fetch analytics data for the selected range
+  const analytics = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: start, $lte: end },
+  });
+
+  if (!analytics.length) {
+    return res.status(200).json({
+      status: "success",
+      data: [
+        { name: "Returning Visitors", count: 0 },
+        { name: "New Visitors", count: 0 },
+      ],
+    });
+  }
+
+  let totalNewVisitors = 0;
+  let totalReturningVisitors = 0;
+
+  // ✅ Aggregate visitor segmentation data
+  analytics.forEach((entry) => {
+    entry.visitorSegmentation.forEach(({ category, count }) => {
+      if (category === "New Visitors") totalNewVisitors += count;
+      if (category === "Returning Visitors") totalReturningVisitors += count;
+    });
+  });
+
+  // ✅ Calculate daily average for each category
+  const avgNewVisitors = Math.round(totalNewVisitors / numDays);
+  const avgReturningVisitors = Math.round(totalReturningVisitors / numDays);
+
+  res.status(200).json({
+    status: "success",
+    data: [
+      { name: "Returning Visitors", count: avgReturningVisitors },
+      { name: "New Visitors", count: avgNewVisitors },
+    ],
+  });
+});
