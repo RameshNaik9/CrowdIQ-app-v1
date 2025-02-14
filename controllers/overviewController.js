@@ -29,8 +29,6 @@ exports.getOverviewAnalytics = catchAsync(async (req, res, next) => {
         status: "success",
         data: {
           totalVisitors: 0,
-          avgMalePerDay: 0,
-          avgFemalePerDay: 0,
           avgDwellTime: "0m",
           avgAge: 0,
           visitorTrend: [],
@@ -43,34 +41,36 @@ exports.getOverviewAnalytics = catchAsync(async (req, res, next) => {
 
     // ✅ Calculate total visitors
     let totalVisitors = 0;
-    let totalMale = 0;
-    let totalFemale = 0;
     let totalDwellTime = 0;
     let totalAge = 0;
     let dwellTimeEntries = 0;
-
-    // ✅ Visitor Trend & Age Distribution
     let visitorTrend = [];
+    let genderDistribution = [];
     let ageDistribution = {};
+    let dwellTimeMap = {
+      "0-5m": 0,
+      "5-10m": 0,
+      "10-20m": 0,
+      "20-30m": 0,
+      "30-60m": 0,
+      "60m+": 0,
+    };
 
     analytics.forEach((entry) => {
       totalVisitors += entry.totalVisitors;
-      totalMale += entry.maleVisitors;
-      totalFemale += entry.femaleVisitors;
 
-      // ✅ Calculate Dwell Time (Convert "m s" format to total seconds)
+      // ✅ Process Dwell Time
       const [minutes, seconds] = entry.avgDwellTime.split("m").map((t) => parseInt(t, 10) || 0);
       totalDwellTime += minutes * 60 + seconds;
       dwellTimeEntries++;
 
-      // ✅ Calculate Age Distribution
+      // ✅ Process Age Distribution
       totalAge += entry.avgAge || 0;
-
       entry.ageDistribution.forEach(({ name, count }) => {
         ageDistribution[name] = (ageDistribution[name] || 0) + count;
       });
 
-      // ✅ Visitor Trend (Hourly Data)
+      // ✅ Process Visitor Trend
       entry.visitorTrend.forEach(({ time, count }) => {
         const trendIndex = visitorTrend.findIndex((t) => t.time === time);
         if (trendIndex !== -1) {
@@ -79,12 +79,29 @@ exports.getOverviewAnalytics = catchAsync(async (req, res, next) => {
           visitorTrend.push({ time, count });
         }
       });
+
+      // ✅ Process Gender Distribution
+      entry.genderDistribution.forEach(({ name, value }) => {
+        const existingIndex = genderDistribution.findIndex((g) => g.name === name);
+        if (existingIndex !== -1) {
+          genderDistribution[existingIndex].value += value;
+        } else {
+          genderDistribution.push({ name, value });
+        }
+      });
+
+      // ✅ Aggregate Dwell Time Distribution
+      entry.dwellTimeDistribution.forEach(({ time, count }) => {
+        if (dwellTimeMap[time] !== undefined) {
+          dwellTimeMap[time] += count;
+        }
+      });
     });
 
     // ✅ Compute Averages
-    const avgMalePerDay = Math.round(totalMale / numDays);
-    const avgFemalePerDay = Math.round(totalFemale / numDays);
-    const avgDwellTime = dwellTimeEntries ? `${Math.floor(totalDwellTime / dwellTimeEntries / 60)}m ${totalDwellTime % 60}s` : "0m";
+    const avgDwellTime = dwellTimeEntries
+      ? `${Math.floor(totalDwellTime / dwellTimeEntries / 60)}m ${totalDwellTime % 60}s`
+      : "0m";
     const avgAge = dwellTimeEntries ? Math.round(totalAge / dwellTimeEntries) : 0;
 
     // ✅ Format Age Distribution
@@ -93,22 +110,17 @@ exports.getOverviewAnalytics = catchAsync(async (req, res, next) => {
       count: ageDistribution[key],
     }));
 
-    // ✅ Prepare Gender Distribution
-    const genderDistribution = [
-      { name: "Male", value: totalMale },
-      { name: "Female", value: totalFemale },
-    ];
-
-    // ✅ Prepare Dwell Time Distribution (Example: Using visitor count per time)
-    const dwellTimeDistribution = analytics.flatMap((entry) => entry.dwellTimeDistribution);
+    // ✅ Format Dwell Time Distribution as an Array
+    const dwellTimeDistribution = Object.keys(dwellTimeMap).map((time) => ({
+      time,
+      count: dwellTimeMap[time],
+    }));
 
     // ✅ Send Response
     res.status(200).json({
       status: "success",
       data: {
         totalVisitors,
-        avgMalePerDay,
-        avgFemalePerDay,
         avgDwellTime,
         avgAge,
         visitorTrend,

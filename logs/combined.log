@@ -1000,3 +1000,5 @@ Error opening input files: Connection refused
 2025-02-13T23:27:52.925Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
 2025-02-13T23:27:58.608Z [INFO] FFmpeg output: 
 2025-02-13T23:27:58.664Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
+2025-02-14T00:48:11.952Z [WARN] Camera Offline: Ramesh Naik Lahori (localhost)
+2025-02-14T00:48:11.962Z [WARN] Camera Offline: Hakim Camera (localhost)
