@@ -990,3 +990,13 @@ Error opening input file rtsp://localhost:8554/test.
 Error opening input files: Connection refused
 
 2025-02-13T15:54:25.548Z [ERROR] Error in connectCamera: RTSP connection failed
+2025-02-13T23:25:55.894Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-13T23:26:01.714Z [INFO] FFmpeg output: 
+2025-02-13T23:26:01.716Z [INFO] Generated RTSP URL: rtsp://hakimuser:hakimpass@localhost:552/221/02
+2025-02-13T23:26:01.717Z [INFO] Testing RTSP connection with test URL: rtsp://localhost:8554/test
+2025-02-13T23:26:07.410Z [INFO] FFmpeg output: 
+2025-02-13T23:26:07.518Z [INFO] Camera connected and saved to DB: 67ae7f8fad44ec545df9be89
+2025-02-13T23:27:47.407Z [INFO] Camera Online: Hakim Camera (localhost)
+2025-02-13T23:27:52.925Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
+2025-02-13T23:27:58.608Z [INFO] FFmpeg output: 
+2025-02-13T23:27:58.664Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
