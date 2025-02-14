@@ -444,3 +444,75 @@ exports.getAgeRangeDistribution = catchAsync(async (req, res, next) => {
     data: formattedData,
   });
 });
+
+// ✅ Fetch Dwell Time Trends with Period Comparison
+exports.getDwellTimeTrends = catchAsync(async (req, res, next) => {
+  const { userId, cameraId, startDate, endDate } = req.query;
+
+  if (!userId || !cameraId || !startDate || !endDate) {
+    return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+  }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const numDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) || 1;
+
+  // ✅ Calculate Previous Period (Same Duration Before Start Date)
+  const prevStart = new Date(start);
+  prevStart.setDate(prevStart.getDate() - numDays);
+  const prevEnd = new Date(end);
+  prevEnd.setDate(prevEnd.getDate() - numDays);
+
+  // ✅ Fetch Dwell Time Data for Both Periods
+  const currentData = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: start, $lte: end },
+  });
+
+  const prevData = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: prevStart, $lte: prevEnd },
+  });
+
+  // ✅ Function to Aggregate Average Visitors per Day by Dwell Time Category
+  const processDwellTimeData = (data) => {
+    let dwellTimeCounts = {
+      "0-5m": 0,
+      "5-10m": 0,
+      "10-20m": 0,
+      "20-30m": 0,
+      "30-60m": 0,
+      "60m+": 0,
+    };
+
+    let totalDays = new Set(data.map((entry) => entry.date.toISOString().split("T")[0])).size || 1;
+
+    data.forEach((entry) => {
+      entry.dwellTimeDistribution.forEach(({ time, count }) => {
+        if (dwellTimeCounts[time] !== undefined) {
+          dwellTimeCounts[time] += count;
+        }
+      });
+    });
+
+    // ✅ Convert to Daily Average
+    return Object.keys(dwellTimeCounts).map((time) => ({
+      time,
+      visitors: Math.round(dwellTimeCounts[time] / totalDays),
+    }));
+  };
+
+  // ✅ Process Data for Current and Previous Period
+  const currentDwellTimeData = processDwellTimeData(currentData);
+  const previousDwellTimeData = processDwellTimeData(prevData);
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      currentPeriod: currentDwellTimeData,
+      previousPeriod: previousDwellTimeData,
+    },
+  });
+});
