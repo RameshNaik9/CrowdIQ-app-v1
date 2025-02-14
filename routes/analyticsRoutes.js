@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getAnalytics, storeAnalytics, getKPIAnalytics, getVisitorTrends, getAvgVisitorsByGender } = require("../controllers/analyticsController");
+const { getAnalytics, storeAnalytics, getKPIAnalytics, getVisitorTrends, getAvgVisitorsByGender, getAgeRangeDistribution } = require("../controllers/analyticsController");
 
 router.get("/", getAnalytics);
 router.post("/", storeAnalytics);
@@ -8,5 +8,6 @@ router.post("/", storeAnalytics);
 router.get("/kpi", getKPIAnalytics);
 router.get("/visitor-trends", getVisitorTrends);
 router.get("/avg-visitors-gender", getAvgVisitorsByGender);
+router.get("/age-range-distribution", getAgeRangeDistribution);
 
 module.exports = router;

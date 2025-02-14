@@ -350,3 +350,67 @@ exports.getAvgVisitorsByGender = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+// ✅ Fetch Age Range Distribution Data
+exports.getAgeRangeDistribution = catchAsync(async (req, res, next) => {
+  const { userId, cameraId, startDate, endDate } = req.query;
+
+  if (!userId || !cameraId || !startDate || !endDate) {
+    return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+  }
+
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  
+  // ✅ Fetch analytics data for the selected range
+  const analytics = await VisitorAnalytics.find({
+    userId,
+    cameraId,
+    date: { $gte: start, $lte: end },
+  });
+
+  if (!analytics.length) {
+    return res.status(200).json({
+      status: "success",
+      data: [],
+    });
+  }
+
+  // ✅ Aggregate age group data
+  let ageGroups = {
+    "0-18": { total: 0, males: 0, females: 0 },
+    "18-25": { total: 0, males: 0, females: 0 },
+    "26-35": { total: 0, males: 0, females: 0 },
+    "36-50": { total: 0, males: 0, females: 0 },
+    "50+": { total: 0, males: 0, females: 0 },
+  };
+
+  analytics.forEach((entry) => {
+    entry.ageDistribution.forEach(({ name, count }) => {
+      if (ageGroups[name]) {
+        ageGroups[name].total += count;
+      }
+    });
+
+    entry.genderDistribution.forEach(({ name, value }) => {
+      if (name === "Male") {
+        Object.keys(ageGroups).forEach((ageGroup) => (ageGroups[ageGroup].males += value));
+      } else if (name === "Female") {
+        Object.keys(ageGroups).forEach((ageGroup) => (ageGroups[ageGroup].females += value));
+      }
+    });
+  });
+
+  // ✅ Convert to an array format
+  const formattedData = Object.keys(ageGroups).map((ageGroup) => ({
+    ageGroup,
+    total: ageGroups[ageGroup].total,
+    males: ageGroups[ageGroup].males,
+    females: ageGroups[ageGroup].females,
+  }));
+
+  res.status(200).json({
+    status: "success",
+    data: formattedData,
+  });
+});
