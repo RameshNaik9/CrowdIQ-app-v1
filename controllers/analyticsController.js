@@ -350,8 +350,6 @@ exports.getAvgVisitorsByGender = catchAsync(async (req, res, next) => {
     },
   });
 });
-
-// ✅ Fetch Age Range Distribution Data
 exports.getAgeRangeDistribution = catchAsync(async (req, res, next) => {
   const { userId, cameraId, startDate, endDate } = req.query;
 
@@ -361,7 +359,8 @@ exports.getAgeRangeDistribution = catchAsync(async (req, res, next) => {
 
   const start = new Date(startDate);
   const end = new Date(endDate);
-  
+  const numDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) || 1; // ✅ Ensure at least 1 day
+
   // ✅ Fetch analytics data for the selected range
   const analytics = await VisitorAnalytics.find({
     userId,
@@ -376,7 +375,7 @@ exports.getAgeRangeDistribution = catchAsync(async (req, res, next) => {
     });
   }
 
-  // ✅ Aggregate age group data
+  // ✅ Initialize age group data
   let ageGroups = {
     "0-18": { total: 0, males: 0, females: 0 },
     "18-25": { total: 0, males: 0, females: 0 },
@@ -386,22 +385,53 @@ exports.getAgeRangeDistribution = catchAsync(async (req, res, next) => {
   };
 
   analytics.forEach((entry) => {
+    // ✅ Step 1: Aggregate total visitors per age group
     entry.ageDistribution.forEach(({ name, count }) => {
       if (ageGroups[name]) {
         ageGroups[name].total += count;
       }
     });
 
+    // ✅ Step 2: Aggregate gender-wise distribution for each age group
     entry.genderDistribution.forEach(({ name, value }) => {
       if (name === "Male") {
-        Object.keys(ageGroups).forEach((ageGroup) => (ageGroups[ageGroup].males += value));
+        entry.ageDistribution.forEach(({ name, count }) => {
+          if (ageGroups[name]) {
+            ageGroups[name].males += Math.round((count / entry.totalVisitors) * value);
+          }
+        });
       } else if (name === "Female") {
-        Object.keys(ageGroups).forEach((ageGroup) => (ageGroups[ageGroup].females += value));
+        entry.ageDistribution.forEach(({ name, count }) => {
+          if (ageGroups[name]) {
+            ageGroups[name].females += Math.round((count / entry.totalVisitors) * value);
+          }
+        });
       }
     });
   });
 
-  // ✅ Convert to an array format
+  // ✅ Convert counts to daily averages
+  Object.keys(ageGroups).forEach((ageGroup) => {
+    ageGroups[ageGroup].total = Math.round(ageGroups[ageGroup].total / numDays);
+    ageGroups[ageGroup].males = Math.round(ageGroups[ageGroup].males / numDays);
+    ageGroups[ageGroup].females = Math.round(ageGroups[ageGroup].females / numDays);
+  });
+
+  // ✅ Ensure sum of males & females matches total
+  Object.keys(ageGroups).forEach((ageGroup) => {
+    let { total, males, females } = ageGroups[ageGroup];
+    let diff = total - (males + females);
+
+    if (diff !== 0) {
+      if (males >= females) {
+        ageGroups[ageGroup].males += diff;
+      } else {
+        ageGroups[ageGroup].females += diff;
+      }
+    }
+  });
+
+  // ✅ Format response
   const formattedData = Object.keys(ageGroups).map((ageGroup) => ({
     ageGroup,
     total: ageGroups[ageGroup].total,
