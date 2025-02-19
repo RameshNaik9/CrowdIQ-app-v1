@@ -232,3 +232,27 @@
 {"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T16:28:31.902Z"}
 {"level":"info","message":"Server running on port 8080","timestamp":"2025-01-31T19:36:26.662Z"}
 {"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-01-31T19:36:26.673Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-02-19T09:26:12.268Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-02-19T09:26:12.290Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-02-19T09:27:09.461Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-02-19T09:27:09.473Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-02-19T09:30:45.755Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:30:45.760Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-02-19T09:34:38.589Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-02-19T09:34:38.605Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-02-19T09:40:48.650Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:40:48.654Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-02-19T09:43:02.336Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:43:02.341Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-02-19T09:47:09.682Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-02-19T09:47:09.699Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-02-19T09:48:29.044Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:48:29.047Z"}
+{"level":"info","message":"Server running on port 8080","timestamp":"2025-02-19T09:53:18.160Z"}
+{"level":"info","message":"MongoDB Connected: localhost","timestamp":"2025-02-19T09:53:18.176Z"}
+{"level":"info","message":"Incoming request: POST /api/cameras/connect","timestamp":"2025-02-19T09:53:34.714Z"}
+{"level":"info","message":"Connecting to camera with details: {\"name\":\"Ramesh\",\"location\":\"sweety location\",\"username\":\"test@kgpian.iitkgp.ac.in\",\"password\":\"Test@1\",\"ip_address\":\"localhost\",\"port\":\"554\",\"channel_number\":\"56\",\"stream_type\":\"01\"}","timestamp":"2025-02-19T09:53:34.719Z"}
+{"level":"info","message":"Generated RTSP URL: rtsp://test@kgpian.iitkgp.ac.in:Test@1@localhost:554/56/01","timestamp":"2025-02-19T09:53:34.719Z"}
+{"level":"info","message":"Testing RTSP connection with test URL: rtsp://localhost:8554/test","timestamp":"2025-02-19T09:53:34.720Z"}
+{"level":"info","message":"FFmpeg output: ","timestamp":"2025-02-19T09:53:40.479Z"}
+{"level":"info","message":"Camera connected and saved to DB: 67b5aa24bca8a13c633d9421","timestamp":"2025-02-19T09:53:40.547Z"}

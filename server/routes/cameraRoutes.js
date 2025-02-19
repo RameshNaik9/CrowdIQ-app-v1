@@ -3,7 +3,8 @@ const { connectCamera, getCamerasForUser } = require('../controllers/cameraContr
 const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router();
-// Route for connecting to a camerarouter.post('/connect', connectCamera);
+// Route for connecting to a camera
+router.post('/connect', connectCamera);
 router.get('/user/cameras', authMiddleware, getCamerasForUser); // ✅ Fetch cameras for logged-in user
 
 module.exports = router;

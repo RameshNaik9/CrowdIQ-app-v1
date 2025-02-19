@@ -35,3 +35,7 @@
 {"level":"error","message":"Error saving camera to DB: RTSP connection failed","timestamp":"2025-01-31T09:36:47.366Z"}
 {"level":"error","message":"Error in connectCamera: Failed to save the camera. Please check the provided details.","timestamp":"2025-01-31T09:36:47.366Z"}
 {"level":"error","message":"Error: Failed to save the camera. Please check the provided details.","timestamp":"2025-01-31T09:36:47.366Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:30:45.760Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:40:48.654Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:43:02.341Z"}
+{"level":"error","message":"Error: Not Found - /api/cameras/connect","timestamp":"2025-02-19T09:48:29.047Z"}
