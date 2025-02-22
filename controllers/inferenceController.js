@@ -15,32 +15,33 @@ exports.triggerInference = async (req, res) => {
 };
 
 exports.processInferenceData = async (data) => {
-    const { cameraId, track_id, gender, age, time_spent, first_appearance, last_appearance } = data;
+    const { userId, cameraId, date, track_id, gender, age, time_spent, first_appearance, last_appearance } = data;
 
-    if (!cameraId || !track_id) {
+    if (!userId || !cameraId || !date || !track_id) {
         console.error("[processInferenceData] Missing required fields.");
         return;
     }
 
-    console.log(`[processInferenceData] Processing data for camera ${cameraId}`);
+    console.log(`[processInferenceData] Processing data for Camera: ${cameraId}, User: ${userId}, Date: ${date}`);
 
     // 1. Update RawDataLog for detailed tracking
-    const log = {
+    const logEntry = {
         tracking_id: track_id,
         gender,
         age,
         time_spent,
-        first_appearance: new Date(parseFloat(first_appearance) * 1000),
-        last_appearance: new Date(parseFloat(last_appearance) * 1000),
+        first_appearance: new Date(first_appearance),
+        last_appearance: new Date(last_appearance)
     };
 
-    const rawLog = await RawDataLog.findOneAndUpdate(
-        { cameraId },
-        { $push: { logs: log } },
+    // Update RawDataLog by userId, cameraId, and date
+    const log = await RawDataLog.findOneAndUpdate(
+        { userId, cameraId, date },
+        { $push: { logs: logEntry } },
         { upsert: true, new: true }
     );
 
-    console.log("[processInferenceData] Raw log updated:", rawLog);
+    console.log("[processInferenceData] Raw log updated:", log);
 
     // 2. Update VisitorAnalytics for aggregate metrics
     const analyticsUpdate = {

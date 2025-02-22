@@ -35,5 +35,7 @@ const RawDataLogSchema = new mongoose.Schema(
 // ✅ Indexes for optimized queries
 RawDataLogSchema.index({ cameraId: 1, date: -1 });
 RawDataLogSchema.index({ userId: 1, date: -1 });
+// Indexing for faster queries
+RawDataLogSchema.index({ userId: 1, cameraId: 1, date: 1 });
 
 module.exports = mongoose.model("RawDataLog", RawDataLogSchema);
