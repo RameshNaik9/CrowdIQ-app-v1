@@ -25,13 +25,8 @@ const startWebSocketServer = (server) => {
             }
         });
 
-        ws.on("close", () => {
-            console.log("[WebSocket] Connection closed.");
-        });
-
-        ws.on("error", (error) => {
-            console.error("[WebSocket] Error:", error);
-        });
+        ws.on("close", () => console.log("[WebSocket] Connection closed."));
+        ws.on("error", (error) => console.error("[WebSocket] Error:", error));
     });
 
     console.log("[WebSocket] WebSocket server running.");
