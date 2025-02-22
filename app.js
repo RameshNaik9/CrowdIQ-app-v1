@@ -14,8 +14,9 @@ const cameraRouter = require('./routes/cameraRoutes');
 const overviewRoutes = require("./routes/overviewRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
 const rawDataLogRoutes = require("./routes/rawDataLogRoutes");
-const AppError = require('./utils/appError');
+const inferenceRoutes = require("./routes/inferenceRoutes");
 const errorController = require('./controllers/errorController');
+const AppError = require('./utils/appError');
 
 const app = express();
 
@@ -70,6 +71,7 @@ app.use('/api/v1/cameras', cameraRouter); // ✅ Register Camera Routes
 app.use("/api/v1/overview", overviewRoutes); // ✅ Add the new API
 app.use("/api/v1/analytics", analyticsRoutes);
 app.use("/api/v1/rawlogs", rawDataLogRoutes);
+app.use("/api/v1/inference", inferenceRoutes);
 
 
 app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes

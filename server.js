@@ -2,6 +2,8 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const http = require("http");
 const socketIo = require("socket.io");
+const { startWebSocketServer } = require("./services/socketService");
+
 
 // Load environment variables
 dotenv.config({ path: "./.env" });
@@ -10,6 +12,7 @@ const app = require("./app");
 
 // Create HTTP server and integrate with WebSocket (Socket.io)
 const server = http.createServer(app);
+startWebSocketServer(server);
 const io = socketIo(server);
 
 // Database Connection
