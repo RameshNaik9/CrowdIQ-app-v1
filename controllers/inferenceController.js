@@ -15,48 +15,65 @@ exports.triggerInference = async (req, res) => {
 };
 
 exports.processInferenceData = async (data) => {
-    const { userId, cameraId, date, track_id, gender, age, time_spent, first_appearance, last_appearance } = data;
+    try {
+        const {
+            userId,
+            cameraId,
+            date,
+            track_id,
+            gender,
+            age,
+            time_spent,
+            first_appearance,
+            last_appearance
+        } = data;
 
-    if (!userId || !cameraId || !date || !track_id) {
-        console.error("[processInferenceData] Missing required fields.");
-        return;
+        if (!userId || !cameraId || !date || !track_id) {
+            console.error("[processInferenceData] Missing required fields.");
+            return;
+        }
+
+        console.log(`[processInferenceData] Processing data for Camera: ${cameraId}, User: ${userId}, Date: ${date}`);
+
+        // Ensure date parsing
+        const firstAppearanceDate = new Date(first_appearance);
+        const lastAppearanceDate = new Date(last_appearance);
+
+        // Prepare log entry
+        const logEntry = {
+            tracking_id: track_id,
+            gender,
+            age,
+            time_spent,
+            first_appearance: firstAppearanceDate,
+            last_appearance: lastAppearanceDate
+        };
+
+        // Update RawDataLog
+        await RawDataLog.findOneAndUpdate(
+            { userId, cameraId, date },
+            { $push: { logs: logEntry } },
+            { upsert: true, new: true }
+        );
+
+        console.log(`[processInferenceData] Log for tracking_id: ${track_id} updated.`);
+
+        // Update VisitorAnalytics
+        await VisitorAnalytics.findOneAndUpdate(
+            { userId, cameraId, date },
+            {
+                $inc: { totalVisitors: 1 },
+                $push: {
+                    genderDistribution: { name: gender, value: 1 },
+                    ageDistribution: { name: age, count: 1 },
+                },
+            },
+            { upsert: true, new: true }
+        );
+
+        console.log(`[processInferenceData] Visitor analytics updated.`);
+    } catch (error) {
+        console.error(`[processInferenceData] Error processing inference data: ${error}`);
     }
-
-    console.log(`[processInferenceData] Processing data for Camera: ${cameraId}, User: ${userId}, Date: ${date}`);
-
-    // 1. Update RawDataLog for detailed tracking
-    const logEntry = {
-        tracking_id: track_id,
-        gender,
-        age,
-        time_spent,
-        first_appearance: new Date(first_appearance),
-        last_appearance: new Date(last_appearance)
-    };
-
-    // Update RawDataLog by userId, cameraId, and date
-    const log = await RawDataLog.findOneAndUpdate(
-        { userId, cameraId, date },
-        { $push: { logs: logEntry } },
-        { upsert: true, new: true }
-    );
-
-    console.log("[processInferenceData] Raw log updated:", log);
-
-    // 2. Update VisitorAnalytics for aggregate metrics
-    const analyticsUpdate = {
-        $inc: { totalVisitors: 1 },
-        $push: {
-            genderDistribution: { name: gender, value: 1 },
-            ageDistribution: { name: age, count: 1 },
-        },
-    };
-
-    const analytics = await VisitorAnalytics.findOneAndUpdate(
-        { cameraId },
-        analyticsUpdate,
-        { upsert: true, new: true }
-    );
-
-    console.log("[processInferenceData] Visitor analytics updated:", analytics);
 };
+

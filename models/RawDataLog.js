@@ -12,12 +12,13 @@ const RawDataLogSchema = new mongoose.Schema(
       ref: "Camera",
       required: true,
     },
-    date: {
-      type: Date,
-      required: true,
-    //   default: Date.now,
-      index: true, // ✅ Faster queries for daily logs
-    },
+        date: { type: String, required: true, index: true },  // Store date as a string
+    // date: {
+    //   type: Date,
+    //   required: true,
+    // //   default: Date.now,
+    //   index: true, // ✅ Faster queries for daily logs
+    // },
     logs: [
       {
         tracking_id: { type: String, required: true },
@@ -33,8 +34,8 @@ const RawDataLogSchema = new mongoose.Schema(
 );
 
 // ✅ Indexes for optimized queries
-RawDataLogSchema.index({ cameraId: 1, date: -1 });
-RawDataLogSchema.index({ userId: 1, date: -1 });
+// RawDataLogSchema.index({ cameraId: 1, date: -1 });
+// RawDataLogSchema.index({ userId: 1, date: -1 });
 // Indexing for faster queries
 RawDataLogSchema.index({ userId: 1, cameraId: 1, date: 1 });
 
