@@ -16,6 +16,8 @@ exports.triggerInference = async (req, res) => {
 
 exports.processInferenceData = async (data) => {
     try {
+        console.log(`[WebSocket] Received data:`, data);
+
         const {
             userId,
             cameraId,
@@ -28,12 +30,13 @@ exports.processInferenceData = async (data) => {
             last_appearance
         } = data;
 
-        if (!userId || !cameraId || !date || !track_id) {
-            console.error("[processInferenceData] Missing required fields.");
+        // Validate all required fields
+        if (!userId || !cameraId || !date || !track_id || !first_appearance || !last_appearance) {
+            console.error(`[processInferenceData] Missing required fields. Received:`, data);
             return;
         }
 
-        console.log(`[processInferenceData] Processing data for Camera: ${cameraId}, User: ${userId}, Date: ${date}`);
+        console.log(`[processInferenceData] Processing data for tracking_id: ${track_id}`);
 
         // Ensure date parsing
         const firstAppearanceDate = new Date(first_appearance);
@@ -50,7 +53,7 @@ exports.processInferenceData = async (data) => {
         };
 
         // Update RawDataLog
-        await RawDataLog.findOneAndUpdate(
+        const rawLog = await RawDataLog.findOneAndUpdate(
             { userId, cameraId, date },
             { $push: { logs: logEntry } },
             { upsert: true, new: true }
@@ -76,4 +79,5 @@ exports.processInferenceData = async (data) => {
         console.error(`[processInferenceData] Error processing inference data: ${error}`);
     }
 };
+
 
