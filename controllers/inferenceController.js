@@ -46,44 +46,60 @@ exports.processInferenceData = async (data) => {
         const firstAppearanceDate = new Date(first_appearance);
         const lastAppearanceDate = new Date(last_appearance);
 
-        // Prepare log entry
-        const logEntry = {
-            tracking_id: track_id,
-            gender,
-            age,
-            time_spent,
-            first_appearance: firstAppearanceDate,
-            last_appearance: lastAppearanceDate
+        // Prepare the log entry update values.
+        const logEntryUpdate = {
+            $inc: { "logs.$.time_spent": time_spent },
+            $set: { "logs.$.last_appearance": lastAppearanceDate }
         };
-        console.log("[processInferenceData] logEntry:", logEntry);
 
-        // Update RawDataLog
-        const rawLog = await RawDataLog.findOneAndUpdate(
-            {
-                userId,
-                cameraId,
-                date: dateObj  // <--- store your date in Mongo as the full Date
-            },
-            { $push: { logs: logEntry } },
-            { upsert: true, new: true }
+        // Try to update an existing log with the same tracking_id.
+        let rawLog = await RawDataLog.findOneAndUpdate(
+            { userId, cameraId, date: dateObj, "logs.tracking_id": track_id },
+            logEntryUpdate,
+            { new: true }
         );
 
-        console.log("[processInferenceData] rawLog updated ->", rawLog);
+        let isNewLog = false;
+        if (rawLog) {
+            console.log("[processInferenceData] Updated existing log for tracking_id:", track_id);
+        } else {
+            // No existing log was found; prepare a new log entry.
+            const newLogEntry = {
+                tracking_id: track_id,
+                gender,
+                age,
+                time_spent,
+                first_appearance: firstAppearanceDate,
+                last_appearance: lastAppearanceDate
+            };
+            // Push the new log entry.
+            rawLog = await RawDataLog.findOneAndUpdate(
+                { userId, cameraId, date: dateObj },
+                { $push: { logs: newLogEntry } },
+                { upsert: true, new: true }
+            );
+            isNewLog = true;
+            console.log("[processInferenceData] Pushed new log for tracking_id:", track_id, "rawLog:", rawLog);
+        }
 
-        // Update VisitorAnalytics
-        await VisitorAnalytics.findOneAndUpdate(
-            { userId, cameraId, date },
-            {
-                $inc: { totalVisitors: 1 },
-                $push: {
+        // Update VisitorAnalytics: only increment totalVisitors if a new log was pushed.
+        const analyticsUpdate = isNewLog
+            ? { $inc: { totalVisitors: 1 }, $push: {
                     genderDistribution: { name: gender, value: 1 },
-                    ageDistribution: { name: age, count: 1 },
-                },
-            },
+                    ageDistribution: { name: age, count: 1 }
+                } }
+            : { $push: {
+                    genderDistribution: { name: gender, value: 1 },
+                    ageDistribution: { name: age, count: 1 }
+                } };
+
+        await VisitorAnalytics.findOneAndUpdate(
+            { userId, cameraId, date: dateObj },
+            analyticsUpdate,
             { upsert: true, new: true }
         );
 
-        console.log(`[processInferenceData] Visitor analytics updated.`);
+        console.log("[processInferenceData] Visitor analytics updated.");
     } catch (error) {
         console.error("[processInferenceData] Error processing inference data:", error);
     }
