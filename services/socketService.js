@@ -1,3 +1,4 @@
+// services/socketService.js
 const WebSocket = require("ws");
 const { processInferenceData } = require("../controllers/inferenceController");
 
@@ -11,8 +12,9 @@ const startWebSocketServer = (server) => {
 
         ws.on("message", async (message) => {
             try {
+                console.log("[WebSocket] RAW message received:", message);
                 const data = JSON.parse(message);
-                console.log("[WebSocket] Received inference result:", data);
+                console.log("[WebSocket] JSON-parsed data:", data);
 
                 // Pass the data to the controller for DB updates
                 await processInferenceData(data);
