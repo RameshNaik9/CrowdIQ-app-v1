@@ -7,8 +7,13 @@ exports.getOverviewAnalytics = catchAsync(async (req, res, next) => {
   const { userId, cameraId, startDate, endDate } = req.query;
 
   // ✅ Validate required parameters
-  if (!userId || !cameraId || !startDate || !endDate) {
-    return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+  if (!userId || !cameraId || cameraId === "null" || !startDate || !endDate) {
+    return next(new AppError("User ID, valid Camera ID, and Date Range are required", 400));
+  }
+
+  // ✅ Validate if cameraId is a valid ObjectId
+  if (!mongoose.Types.ObjectId.isValid(cameraId)) {
+    return next(new AppError("Invalid Camera ID provided", 400));
   }
 
   // ✅ Normalize `startDate` & `endDate`
