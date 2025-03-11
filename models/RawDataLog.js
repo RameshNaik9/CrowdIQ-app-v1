@@ -1,3 +1,4 @@
+// models/RawDataLog.js
 const mongoose = require("mongoose");
 
 const RawDataLogSchema = new mongoose.Schema(
@@ -12,19 +13,17 @@ const RawDataLogSchema = new mongoose.Schema(
       ref: "Camera",
       required: true,
     },
-        // date: { type: String, required: true, index: true },  // Store date as a string
     date: {
       type: Date,
       required: true,
-    //   default: Date.now,
-      index: true, // ✅ Faster queries for daily logs
+      index: true, // Index for faster queries
     },
     logs: [
       {
         tracking_id: { type: String, required: true },
         gender: { type: String, required: true },
         age: { type: String, required: true },
-        time_spent: { type: Number, required: true }, // Time spent in seconds
+        time_spent: { type: Number, required: true },
         first_appearance: { type: Date, required: true },
         last_appearance: { type: Date, required: true },
       },
@@ -33,10 +32,7 @@ const RawDataLogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// ✅ Indexes for optimized queries
-// RawDataLogSchema.index({ cameraId: 1, date: -1 });
-// RawDataLogSchema.index({ userId: 1, date: -1 });
-// Indexing for faster queries
-RawDataLogSchema.index({ userId: 1, cameraId: 1, date: 1 });
+// Enforce uniqueness on userId, cameraId, and normalized date
+RawDataLogSchema.index({ userId: 1, cameraId: 1, date: 1 }, { unique: true });
 
 module.exports = mongoose.model("RawDataLog", RawDataLogSchema);

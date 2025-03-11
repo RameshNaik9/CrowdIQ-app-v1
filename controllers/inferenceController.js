@@ -38,23 +38,30 @@ exports.processInferenceData = async (data) => {
             return;
         }
 
-        // Convert string -> Date object
-        const dateObj = new Date(date);
-        console.log("[processInferenceData] dateObj after parsing:", dateObj.toISOString());
+        // Normalize the provided date to midnight (00:00:00 UTC)
+        const getDateAtMidnight = (dateInput) => {
+            const d = new Date(dateInput);
+            d.setUTCHours(0, 0, 0, 0);
+            return d;
+        };
 
-        // Also parse first_appearance / last_appearance
+        const normalizedDate = getDateAtMidnight(date);
+
+        console.log("[processInferenceData] Normalized date:", normalizedDate.toISOString());
+
+        // Also parse first_appearance and last_appearance
         const firstAppearanceDate = new Date(first_appearance);
         const lastAppearanceDate = new Date(last_appearance);
 
-        // Prepare the log entry update values.
+        // Prepare the update for an existing log entry
         const logEntryUpdate = {
             $inc: { "logs.$.time_spent": time_spent },
             $set: { "logs.$.last_appearance": lastAppearanceDate }
         };
 
-        // Try to update an existing log with the same tracking_id.
+        // Try to update an existing log with the same tracking_id in the normalized date document.
         let rawLog = await RawDataLog.findOneAndUpdate(
-            { userId, cameraId, date: dateObj, "logs.tracking_id": track_id },
+            { userId, cameraId, date: normalizedDate, "logs.tracking_id": track_id },
             logEntryUpdate,
             { new: true }
         );
@@ -63,7 +70,7 @@ exports.processInferenceData = async (data) => {
         if (rawLog) {
             console.log("[processInferenceData] Updated existing log for tracking_id:", track_id);
         } else {
-            // No existing log was found; prepare a new log entry.
+            // No existing log for that tracking_id on this date; create a new log entry.
             const newLogEntry = {
                 tracking_id: track_id,
                 gender,
@@ -72,9 +79,9 @@ exports.processInferenceData = async (data) => {
                 first_appearance: firstAppearanceDate,
                 last_appearance: lastAppearanceDate
             };
-            // Push the new log entry.
+            // Push the new log entry into the document for the normalized date.
             rawLog = await RawDataLog.findOneAndUpdate(
-                { userId, cameraId, date: dateObj },
+                { userId, cameraId, date: normalizedDate },
                 { $push: { logs: newLogEntry } },
                 { upsert: true, new: true }
             );
@@ -82,7 +89,7 @@ exports.processInferenceData = async (data) => {
             console.log("[processInferenceData] Pushed new log for tracking_id:", track_id, "rawLog:", rawLog);
         }
 
-        // Update VisitorAnalytics: only increment totalVisitors if a new log was pushed.
+        // Update VisitorAnalytics with the same normalized date to maintain consistency across collections.
         const analyticsUpdate = isNewLog
             ? { $inc: { totalVisitors: 1 }, $push: {
                     genderDistribution: { name: gender, value: 1 },
@@ -94,7 +101,7 @@ exports.processInferenceData = async (data) => {
                 } };
 
         await VisitorAnalytics.findOneAndUpdate(
-            { userId, cameraId, date: dateObj },
+            { userId, cameraId, date: normalizedDate },
             analyticsUpdate,
             { upsert: true, new: true }
         );
