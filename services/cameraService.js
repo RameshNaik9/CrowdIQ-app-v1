@@ -10,15 +10,16 @@ const { exec } = require('child_process');
 exports.connectToCamera = async (cameraDetails) => {
     const { userId, name, location, username, password, ip_address, port, channel_number, stream_type } = cameraDetails;
 
-    // Construct the RTSP URL
+    // Construct the correct RTSP URL using the provided details
     const rtspUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
     logger.info(`Generated RTSP URL: ${rtspUrl}`);
 
-    // Use a test RTSP connection for now
-    const testRtspUrl = 'rtsp://localhost:8554/test';
+    // Determine which RTSP URL to use based on the environment
+    const isProduction = process.env.NODE_ENV === 'production';
+    const testRtspUrl = isProduction ? rtspUrl : 'rtsp://localhost:8554/test';
 
     try {
-        logger.info(`Testing RTSP connection with test URL: ${testRtspUrl}`);
+        logger.info(`Testing RTSP connection with URL: ${testRtspUrl}`);
         
         // Simulate a successful RTSP connection
         await testRTSPConnection(testRtspUrl);
@@ -29,7 +30,7 @@ exports.connectToCamera = async (cameraDetails) => {
             {
                 name,
                 location,
-                stream_link: testRtspUrl,
+                stream_link: testRtspUrl, // Use the determined RTSP URL
                 username,
                 password,
                 ip_address,

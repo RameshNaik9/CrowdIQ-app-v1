@@ -22,8 +22,18 @@ exports.connectCamera = async (req, res, next) => {
 
         logger.info(`User ${userId} is connecting to a camera`);
 
-        // Always test the RTSP connection using the test URL
-        const testRtspUrl = 'rtsp://localhost:8554/test';
+        // Determine the RTSP URL for testing based on environment
+        const isProduction = process.env.NODE_ENV === 'production';
+        let testRtspUrl;
+        if (isProduction) {
+            // Construct the RTSP URL using the provided camera data
+            const { username, password, ip_address, port, channel_number, stream_type } = cameraData;
+            testRtspUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
+        } else {
+            testRtspUrl = 'rtsp://localhost:8554/test';
+        }
+
+        // Always test the RTSP connection using the determined test URL
         await testRTSPConnection(testRtspUrl);
 
         if (cameraId) {
@@ -39,6 +49,7 @@ exports.connectCamera = async (req, res, next) => {
                     $push: {
                         connection_history: { status: 'success', reason: 'Reconnected successfully' },
                     },
+                    stream_link: testRtspUrl, // Use the determined testRtspUrl
                 });
 
                 return res.status(200).json({
@@ -103,7 +114,6 @@ exports.getAllCameras = catchAsync(async (req, res, next) => {
         data: cameras,
     });
 });
-
 
 /**
  * @desc    Get a single camera by ID
