@@ -107,7 +107,7 @@ cameraSchema.pre('save', function (next) {
 });
 
 // ✅ **TTL Index (Auto-delete old connection history after 30 days)**
-cameraSchema.index({ "connection_history.timestamp": 1 }, { expireAfterSeconds: 30 * 24 * 60 * 60 });
+// cameraSchema.index({ "connection_history.timestamp": 1 }, { expireAfterSeconds: 30 * 24 * 60 * 60 });
 
 // ✅ **Indexes for Faster Queries**
 cameraSchema.index({ name: 1 });
