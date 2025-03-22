@@ -1,6 +1,7 @@
 // controllers/inferenceController.js
 const RawDataLog = require("../models/RawDataLog");
 const VisitorAnalytics = require("../models/VisitorAnalytics");
+const { updateAnalyticsFromRawLogs } = require('../services/analyticsService');
 
 
 exports.triggerInference = async (req, res) => {
@@ -89,24 +90,26 @@ exports.processInferenceData = async (data) => {
             console.log("[processInferenceData] Pushed new log for tracking_id:", track_id, "rawLog:", rawLog);
         }
 
-        // Update VisitorAnalytics with the same normalized date to maintain consistency across collections.
-        const analyticsUpdate = isNewLog
-            ? { $inc: { totalVisitors: 1 }, $push: {
-                    genderDistribution: { name: gender, value: 1 },
-                    ageDistribution: { name: age, count: 1 }
-                } }
-            : { $push: {
-                    genderDistribution: { name: gender, value: 1 },
-                    ageDistribution: { name: age, count: 1 }
-                } };
+        // // Update VisitorAnalytics with the same normalized date to maintain consistency across collections.
+        // const analyticsUpdate = isNewLog
+        //     ? { $inc: { totalVisitors: 1 }, $push: {
+        //             genderDistribution: { name: gender, value: 1 },
+        //             ageDistribution: { name: age, count: 1 }
+        //         } }
+        //     : { $push: {
+        //             genderDistribution: { name: gender, value: 1 },
+        //             ageDistribution: { name: age, count: 1 }
+        //         } };
 
-        await VisitorAnalytics.findOneAndUpdate(
-            { userId, cameraId, date: normalizedDate },
-            analyticsUpdate,
-            { upsert: true, new: true }
-        );
+        // await VisitorAnalytics.findOneAndUpdate(
+        //     { userId, cameraId, date: normalizedDate },
+        //     analyticsUpdate,
+        //     { upsert: true, new: true }
+        // );
 
-        console.log("[processInferenceData] Visitor analytics updated.");
+        await updateAnalyticsFromRawLogs(userId, cameraId, normalizedDate);
+        console.log("[processInferenceData] Visitor analytics updated using recalculated data from raw logs.");
+        
     } catch (error) {
         console.error("[processInferenceData] Error processing inference data:", error);
     }
