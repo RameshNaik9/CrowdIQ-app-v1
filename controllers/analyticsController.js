@@ -209,6 +209,146 @@ exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
 });
 
 
+// // ✅ Function to fetch KPI data
+// exports.getKPIAnalytics = catchAsync(async (req, res, next) => {
+//   const { userId, cameraId, startDate, endDate } = req.query;
+
+//   if (!userId || !cameraId || !startDate || !endDate) {
+//     return next(new AppError("User ID, Camera ID, and Date Range are required", 400));
+//   }
+
+//   const start = new Date(startDate);
+//   const end = new Date(endDate);
+
+//   // ✅ Fetch analytics data for the selected range
+//   const analytics = await VisitorAnalytics.find({
+//     userId,
+//     cameraId,
+//     date: { $gte: start, $lte: end },
+//   });
+
+//   if (!analytics.length) {
+//     return res.status(200).json({
+//       status: "success",
+//       data: {
+//         avgVisitorsPerDay: 0,
+//         avgVisitorsChange: 0,
+//         peakHour: "N/A",
+//         peakHourVisitors: 0,
+//         peakHourChange: 0,
+//         dwellTime: "0m",
+//         dwellTimeChange: 0,
+//         returningVisitors: "0%",
+//         returningVisitorsChange: 0,
+//       },
+//     });
+//   }
+
+//   // ✅ Calculate unique days with data for current period
+//   const uniqueDays = new Set(analytics.map(doc => doc.date.toISOString().split("T")[0])).size || 1;
+//   const totalVisitors = analytics.reduce((sum, entry) => sum + entry.totalVisitors, 0);
+//   const avgVisitorsPerDay = Math.round(totalVisitors / uniqueDays);
+
+//   // ✅ For previous period, subtract the number of unique days
+//   const prevStart = new Date(start);
+//   prevStart.setDate(prevStart.getDate() - uniqueDays);
+//   const prevEnd = new Date(end);
+//   prevEnd.setDate(prevEnd.getDate() - uniqueDays);
+
+//   const prevAnalytics = await VisitorAnalytics.find({
+//     userId,
+//     cameraId,
+//     date: { $gte: prevStart, $lte: prevEnd },
+//   });
+//   const prevUniqueDays = new Set(prevAnalytics.map(doc => doc.date.toISOString().split("T")[0])).size || 1;
+//   const prevTotalVisitors = prevAnalytics.reduce((sum, entry) => sum + entry.totalVisitors, 0);
+//   const prevAvgVisitorsPerDay = prevTotalVisitors > 0 ? Math.round(prevTotalVisitors / prevUniqueDays) : 0;
+//   const avgVisitorsChange = prevAvgVisitorsPerDay
+//     ? ((avgVisitorsPerDay - prevAvgVisitorsPerDay) / prevAvgVisitorsPerDay) * 100
+//     : 0;
+
+//   // ✅ Compute Peak Hour for current period
+//   const hourMap = {};
+//   analytics.forEach((entry) => {
+//     entry.visitorTrend.forEach(({ time, count }) => {
+//       hourMap[time] = (hourMap[time] || 0) + count;
+//     });
+//   });
+
+//   const peakHour = Object.keys(hourMap).reduce((a, b) => (hourMap[a] > hourMap[b] ? a : b), "N/A");
+//   const peakHourVisitors = peakHour !== "N/A" ? Math.round(hourMap[peakHour] / uniqueDays) : 0;
+
+//   // ✅ Compute Peak Hour for previous period
+//   const prevHourMap = {};
+//   prevAnalytics.forEach((entry) => {
+//     entry.visitorTrend.forEach(({ time, count }) => {
+//       prevHourMap[time] = (prevHourMap[time] || 0) + count;
+//     });
+//   });
+
+//   const prevPeakHour = Object.keys(prevHourMap).reduce((a, b) => (prevHourMap[a] > prevHourMap[b] ? a : b), "N/A");
+//   const prevPeakHourVisitors = prevPeakHour !== "N/A" ? Math.round(prevHourMap[prevPeakHour] / prevUniqueDays) : 0;
+//   const peakHourChange = prevPeakHourVisitors
+//     ? ((peakHourVisitors - prevPeakHourVisitors) / prevPeakHourVisitors) * 100
+//     : 0;
+
+//   // ✅ Calculate Average Dwell Time
+//   const totalDwellTimes = analytics.map((entry) =>
+//     parseInt(entry.avgDwellTime.split("m")[0]) * 60 + parseInt(entry.avgDwellTime.split(" ")[1].replace("s", ""))
+//   );
+//   const avgDwellTimeSeconds = totalDwellTimes.length
+//     ? Math.round(totalDwellTimes.reduce((a, b) => a + b, 0) / totalDwellTimes.length)
+//     : 0;
+
+//   const prevDwellTimes = prevAnalytics.map((entry) =>
+//     parseInt(entry.avgDwellTime.split("m")[0]) * 60 + parseInt(entry.avgDwellTime.split(" ")[1].replace("s", ""))
+//   );
+//   const prevAvgDwellTimeSeconds = prevDwellTimes.length
+//     ? Math.round(prevDwellTimes.reduce((a, b) => a + b, 0) / prevDwellTimes.length)
+//     : 0;
+//   const dwellTimeChange = prevAvgDwellTimeSeconds
+//     ? ((avgDwellTimeSeconds - prevAvgDwellTimeSeconds) / prevAvgDwellTimeSeconds) * 100
+//     : 0;
+
+//   // ✅ Calculate Returning Visitors
+//   const totalReturning = analytics.reduce(
+//     (sum, entry) => sum + (entry.visitorSegmentation.find((v) => v.category === "Returning Visitors")?.count || 0),
+//     0
+//   );
+
+//   const totalSegmented = analytics.reduce((sum, entry) => sum + entry.totalVisitors, 0);
+
+//   const returningVisitors = totalSegmented ? Math.round((totalReturning / totalSegmented) * 100) + "%" : "0%";
+
+//   const prevTotalReturning = prevAnalytics.reduce(
+//     (sum, entry) => sum + (entry.visitorSegmentation.find((v) => v.category === "Returning Visitors")?.count || 0),
+//     0
+//   );
+
+//   const prevTotalSegmented = prevAnalytics.reduce((sum, entry) => sum + entry.totalVisitors, 0);
+//   const prevReturningVisitors = prevTotalSegmented ? Math.round((prevTotalReturning / prevTotalSegmented) * 100) : 0;
+//   const returningVisitorsChange = prevReturningVisitors
+//     ? ((parseInt(returningVisitors) - prevReturningVisitors) / prevReturningVisitors) * 100
+//     : 0;
+
+//   // ✅ Send Final KPI Data
+//   res.status(200).json({
+//     status: "success",
+//     data: {
+//       avgVisitorsPerDay,
+//       avgVisitorsChange,
+//       peakHour,
+//       peakHourVisitors,
+//       peakHourChange,
+//       dwellTime: `${Math.floor(avgDwellTimeSeconds / 60)}m ${avgDwellTimeSeconds % 60}s`,
+//       dwellTimeChange,
+//       returningVisitors,
+//       returningVisitorsChange,
+//     },
+//   });
+// });
+
+
 // ✅ Function to fetch hourly visitor trends
 exports.getVisitorTrends = catchAsync(async (req, res, next) => {
   const { userId, cameraId, startDate, endDate } = req.query;
