@@ -2,55 +2,116 @@ const Camera = require('../models/cameraModel');
 const logger = require('../utils/logger');
 const { exec } = require('child_process');
 
+// /**
+//  * @desc    Connect & register a new camera
+//  * @param   {Object} cameraDetails - Camera details from frontend
+//  * @returns {Promise<Object>} - Saved camera details
+//  */
+// exports.connectToCamera = async (cameraDetails) => {
+//     const { userId, name, location, username, password, ip_address, port, channel_number, stream_type } = cameraDetails;
+
+//     // Construct the correct RTSP URL using the provided details
+//     const rtspUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
+//     logger.info(`Generated RTSP URL: ${rtspUrl}`);
+
+//     // Determine which RTSP URL to use based on the environment
+//     const isProduction = process.env.NODE_ENV === 'production';
+//     const testRtspUrl = isProduction ? rtspUrl : 'rtsp://localhost:8554/test';
+
+//     try {
+//         logger.info(`Testing RTSP connection with URL: ${testRtspUrl}`);
+        
+//         // Simulate a successful RTSP connection
+//         await testRTSPConnection(testRtspUrl);
+
+//         // Save the camera in the database
+//         const updatedCamera = await Camera.findOneAndUpdate(
+//             { name, location, created_by: userId },
+//             {
+//                 name,
+//                 location,
+//                 stream_link: testRtspUrl, // Use the determined RTSP URL
+//                 username,
+//                 password,
+//                 ip_address,
+//                 port,
+//                 channel_number,
+//                 stream_type,
+//                 last_active: new Date(),
+//                 status: 'online',
+//                 created_by: userId,
+//             },
+//             { new: true, upsert: true }
+//         );
+
+//         logger.info(`Camera connected and saved to DB: ${updatedCamera._id}`);
+
+//         return updatedCamera;
+//     } catch (error) {
+//         logger.error(`Error saving camera to DB: ${error.message}`);
+//         throw new Error('Failed to save the camera. Please check the provided details.');
+//     }
+// };
+
+
 /**
  * @desc    Connect & register a new camera
  * @param   {Object} cameraDetails - Camera details from frontend
  * @returns {Promise<Object>} - Saved camera details
  */
 exports.connectToCamera = async (cameraDetails) => {
-    const { userId, name, location, username, password, ip_address, port, channel_number, stream_type } = cameraDetails;
-
-    // Construct the correct RTSP URL using the provided details
-    const rtspUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
-    logger.info(`Generated RTSP URL: ${rtspUrl}`);
-
-    // Determine which RTSP URL to use based on the environment
-    const isProduction = process.env.NODE_ENV === 'production';
-    const testRtspUrl = isProduction ? rtspUrl : 'rtsp://localhost:8554/test';
-
-    try {
-        logger.info(`Testing RTSP connection with URL: ${testRtspUrl}`);
-        
-        // Simulate a successful RTSP connection
-        await testRTSPConnection(testRtspUrl);
-
-        // Save the camera in the database
-        const updatedCamera = await Camera.findOneAndUpdate(
-            { name, location, created_by: userId },
-            {
-                name,
-                location,
-                stream_link: testRtspUrl, // Use the determined RTSP URL
-                username,
-                password,
-                ip_address,
-                port,
-                channel_number,
-                stream_type,
-                last_active: new Date(),
-                status: 'online',
-                created_by: userId,
-            },
-            { new: true, upsert: true }
-        );
-
-        logger.info(`Camera connected and saved to DB: ${updatedCamera._id}`);
-
-        return updatedCamera;
-    } catch (error) {
-        logger.error(`Error saving camera to DB: ${error.message}`);
-        throw new Error('Failed to save the camera. Please check the provided details.');
-    }
+  const {
+    userId,
+    name,
+    location,
+    username,
+    password,
+    ip_address,
+    port,
+    channel_number,
+    stream_type,
+    rtsp_url, // user-supplied editable field
+  } = cameraDetails;
+  
+  // Construct a URL if user did not provide one
+  const constructedUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
+  const finalUrl = rtsp_url && rtsp_url.trim() !== "" ? rtsp_url : constructedUrl;
+  logger.info(`Constructed RTSP URL: ${constructedUrl}`);
+  logger.info(`Final RTSP URL: ${finalUrl}`);
+  
+  // Check NODE_ENV: In production, use the client-provided URL (or constructed URL); in development, use the test URL.
+  const isProduction = process.env.NODE_ENV === 'production';
+  const testRtspUrl = isProduction ? finalUrl : 'rtsp://localhost:8554/test';
+  
+  try {
+    logger.info(`Testing RTSP connection with URL: ${testRtspUrl}`);
+    await testRTSPConnection(testRtspUrl);
+    
+    // Save or update the camera in the database using the final tested URL.
+    const updatedCamera = await Camera.findOneAndUpdate(
+      { name, location, created_by: userId },
+      {
+        name,
+        location,
+        stream_link: testRtspUrl,
+        username,
+        password,
+        ip_address,
+        port,
+        channel_number,
+        stream_type,
+        last_active: new Date(),
+        status: 'online',
+        created_by: userId,
+      },
+      { new: true, upsert: true }
+    );
+    logger.info(`Camera connected and saved to DB: ${updatedCamera._id}`);
+    return updatedCamera;
+  } catch (error) {
+    logger.error(`Error saving camera to DB: ${error.message}`);
+    throw new Error('Failed to save the camera. Please check the provided details.');
+  }
 };
 
 /**

@@ -1019,3 +1019,5 @@ Error opening input files: Connection refused
 2025-02-14T17:16:46.405Z [INFO] User 67a21542aa6ea68be40a23ab is connecting to a camera
 2025-02-14T17:16:52.168Z [INFO] FFmpeg output: 
 2025-02-14T17:16:52.189Z [INFO] Updating existing camera: 67a6b2b3ad44ec545df7f440
+2025-03-22T11:35:04.393Z [INFO] User 67d94fff599f085c5f13be33 is connecting to a camera of type local
+2025-03-22T11:35:04.414Z [INFO] Local camera updated and saved to DB: 67de839d3961c6ba25bc2be3
