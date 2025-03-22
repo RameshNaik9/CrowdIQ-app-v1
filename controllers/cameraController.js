@@ -4,6 +4,7 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const logger = require('../utils/logger');
 const { exec } = require('child_process');
+const Camera = require('../models/cameraModel');
 
 
 /**
@@ -13,63 +14,94 @@ const { exec } = require('child_process');
  */
 exports.connectCamera = async (req, res, next) => {
     try {
-        // Extract userId, cameraId (optional) and the rest of the camera data from the request body
-        const { userId, cameraId, ...cameraData } = req.body;
-
+        // Extract userId, cameraId (optional), type and the rest of the camera data from the request body
+        const { userId, cameraId, type, ...cameraData } = req.body;
+        
         if (!userId) {
             return next(new AppError('User ID is required', 400));
         }
-
-        logger.info(`User ${userId} is connecting to a camera`);
-
-        // Determine the RTSP URL for testing based on environment
-        const isProduction = process.env.NODE_ENV === 'production';
-        let testRtspUrl;
-        if (isProduction) {
-            // Construct the RTSP URL using the provided camera data
-            const { username, password, ip_address, port, channel_number, stream_type } = cameraData;
-            testRtspUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
-        } else {
-            testRtspUrl = 'rtsp://localhost:8554/test';
-        }
-
-        // Always test the RTSP connection using the determined test URL
-        await testRTSPConnection(testRtspUrl);
-
-        if (cameraId) {
-            // Update existing camera if cameraId is provided
-            let existingCamera = await cameraService.getCameraById(cameraId);
-            if (existingCamera) {
-                logger.info(`Updating existing camera: ${existingCamera._id}`);
-
-                // Update the existing camera's status, last active timestamp, and connection history
-                const updatedCamera = await cameraService.updateCamera(existingCamera._id, {
-                    status: 'online',
-                    last_active: new Date(),
-                    $push: {
-                        connection_history: { status: 'success', reason: 'Reconnected successfully' },
-                    },
-                    stream_link: testRtspUrl, // Use the determined testRtspUrl
-                });
-
-                return res.status(200).json({
-                    status: 'success',
-                    message: 'Camera reconnected successfully!',
-                    data: updatedCamera,
-                });
+      
+        logger.info(`User ${userId} is connecting to a camera of type ${type}`);
+      
+        if (type === 'local') {
+            // For local cameras, we want to update an existing document if it exists.
+            // Use cameraId if provided; otherwise, search for any local camera for this user.
+            let query;
+            if (cameraId) {
+                query = { _id: cameraId, type: 'local', created_by: userId };
             } else {
-                return next(new AppError('Camera not found', 404));
+                query = { type: 'local', created_by: userId };
             }
-        } else {
-            // Create a new camera since no cameraId is provided
-            const newCamera = await connectToCamera({ userId, ...cameraData });
+            
+            // Update existing local camera or create one if none exists.
+            const newCamera = await Camera.findOneAndUpdate(
+                query,
+                {
+                    ...cameraData, // This may include name and location (if coming from LocalCameraSetup)
+                    type, // "local"
+                    stream_link: "local", // flag or identifier for local camera streams
+                    last_active: new Date(),
+                    status: 'online',
+                    created_by: userId,
+                },
+                { new: true, upsert: true }
+            );
+        
+            logger.info(`Local camera connected and saved to DB: ${newCamera._id}`);
+        
             return res.status(200).json({
                 status: 'success',
-                message: 'Camera connected successfully!',
+                message: 'Local camera connected successfully!',
                 data: newCamera,
             });
+        } else {
+            // For RTSP cameras, proceed as before.
+            const isProduction = process.env.NODE_ENV === 'production';
+            let testRtspUrl;
+            if (isProduction) {
+                const { username, password, ip_address, port, channel_number, stream_type } = cameraData;
+                testRtspUrl = `rtsp://${username}:${password}@${ip_address}:${port}/${channel_number}/${stream_type}`;
+            } else {
+                testRtspUrl = 'rtsp://localhost:8554/test';
+            }
+        
+            // Always test the RTSP connection using the determined test URL
+            await testRTSPConnection(testRtspUrl);
+        
+            if (cameraId) {
+                // Update existing camera if cameraId is provided
+                let existingCamera = await cameraService.getCameraById(cameraId);
+                if (existingCamera) {
+                    logger.info(`Updating existing camera: ${existingCamera._id}`);
+                    const updatedCamera = await cameraService.updateCamera(existingCamera._id, {
+                        status: 'online',
+                        last_active: new Date(),
+                        $push: {
+                            connection_history: { status: 'success', reason: 'Reconnected successfully' },
+                        },
+                        stream_link: testRtspUrl, // Use the determined testRtspUrl
+                    });
+                
+                    return res.status(200).json({
+                        status: 'success',
+                        message: 'Camera reconnected successfully!',
+                        data: updatedCamera,
+                    });
+                } else {
+                    return next(new AppError('Camera not found', 404));
+                }
+            } else {
+                // Create a new RTSP camera since no cameraId is provided
+                const newCamera = await connectToCamera({ userId, ...cameraData, rtsp_url: testRtspUrl });
+                return res.status(200).json({
+                    status: 'success',
+                    message: 'Camera connected successfully!',
+                    data: newCamera,
+                });
+            }
         }
-    } catch (error) {
+    }   
+    catch (error) {
         logger.error(`Error in connectCamera: ${error.message}`);
         next(error);
     }

@@ -39,6 +39,11 @@ const cameraSchema = new mongoose.Schema(
             type: String,
             default: 'main',
         },
+        type: {
+            type: String,
+            enum: ['rtsp', 'local'],
+            default: 'rtsp',
+        },
         channel_number: {
             type: String,
             required: true,

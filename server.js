@@ -16,7 +16,7 @@ startWebSocketServer(server);
 const io = socketIo(server);
 
 // Database Connection
-const DB = "mongodb://localhost:27017/googleOAuth";
+const DB = "mongodb://localhost:27017/CrowdIQ-DB";
 
 mongoose
   .connect(DB, {
@@ -26,7 +26,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("DB connection established");
+    console.log(`DB connection established to ${DB}`);
   })
   .catch((err) => {
     console.log("DB CONNECTION FAILED");
